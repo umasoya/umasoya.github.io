@@ -8,6 +8,9 @@ services:
             - .:/newb.tokyo:rw
             - node_modules:/newb.tokyo/node_modules:rw
         working_dir: /newb.tokyo
+        ports:
+          - 9000:9000
+        command: npm run serve
 
     hugo:
         build: ./docker/hugo

@@ -39,6 +39,7 @@ hljs.registerLanguage("yaml", yaml);
 /**
  * Applies highlighting to a DOM node containing inline code.
  */
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 hljs.highlightInline = () => {
   const elements = document.querySelectorAll("code");
   const l = elements.length;
@@ -88,6 +89,7 @@ ScrollOut({
       1000
     );
   },
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onChange: (elm: HTMLElement, ctx: any) => {
     if (!ctx.visible) {
       elm.style.opacity = "0";
