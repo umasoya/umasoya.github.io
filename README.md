@@ -1,17 +1,21 @@
 # README
 
+## How to write new post?
+
+use `hugo new` command.
+
+```
+.bin/hugo new posts/hello.md
+
+or
+
+.bin/hugo hugo new posts/hello/index.md
+```
+
 ## build content
 
 ```sh
 docker-compose run --rm hugo hugo
-```
-
-## live reload
-
-```sh
-# default port: 1313
-# default live reload port: 443
-docker-compose run --rm --service-ports hugo hugo server -w --bind '0.0.0.0'
 ```
 
 ## build assets

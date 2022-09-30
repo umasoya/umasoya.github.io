@@ -13,7 +13,8 @@ services:
         command: npm run serve
 
     hugo:
-        build: ./docker/hugo
+        # build: ./docker/hugo
+        image: umasoya/hugo
         volumes:
             - .:/newb.tokyo:rw
         working_dir: /newb.tokyo
