@@ -16,10 +16,24 @@ or
 
 ```sh
 docker-compose run --rm hugo hugo
+
+# or
+
+.bin/hugo hugo
 ```
 
 ## build assets
 
 ```sh
 docker-compose run --rm node npm run build
+```
+
+## run server
+
+```sh
+npm run serve
+
+# or
+
+.bin/server
 ```

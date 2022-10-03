@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <title>放置していていたブログのメンテナンスをした話 - newb.tokyo</title>
+  
+  <meta name="description" content="久しく放置していたこのブログのメンテンスを実施しました。 フロントまわりのツール類は変化が早く、陳腐化していたため整理&amp;アップデートを">
+  <meta name="author" content="umasoya">
+  
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
+  <link href="../../css/style.css" rel="stylesheet" type="text/css">
+  
+  
+  <link href="https://newb.tokyo/css/app.min.css" rel="stylesheet">
+  
+  <link rel="apple-touch-icon" href="../../img/apple-touch-icon.png">
+  <link rel="icon" href="../../img/favicon.ico">
+  
+  <meta name="generator" content="Hugo 0.59.0">
+  
+  <link rel="alternate" type="application/atom+xml" href="https://newb.tokyo/index.xml" title="newb.tokyo">
+</head>
+
+<body class="single">
+  <header class="header">
+    
+    <p class="title"><a href="https://newb.tokyo/">newb.tokyo</a></p>
+    
+
+    <p class="menuList">
+    
+        <a href="../../">home</a>
+        <span class="separator">&frasl;</span>
+    
+        <a href="../../about/">about</a>
+        
+    
+    </p>
+  </header>
+  <main class="main ">
+
+<article class="post post-view">
+  <header class="post-header">
+    <h1 class="post-title">放置していていたブログのメンテナンスをした話</h1>
+    <p class="post-meta">2022.9.30</p>
+    
+  </header>
+  <div class="post-content">
+
+<p>久しく放置していたこのブログのメンテンスを実施しました。
+フロントまわりのツール類は変化が早く、陳腐化していたため整理&amp;アップデートをしたのですが中々大変でした。</p>
+
+<h2 id="ツールやモジュールの整理">ツールやモジュールの整理</h2>
+
+<p>先日IEのサポートが終了しbabelを使う必要が無くなったので、この機会に削除しました。
+また、gulpを使用してアセットのビルドなどの処理を行っていたのですが、webpackだけで事足りるためこちらも削除しました。
+以前使用していたnode-sassはDeprecatedになっていたので、 sass(Dart-sass)へ移行。</p>
+
+<pre><code class="language-json"> {
++  &quot;license&quot;: &quot;UNLICENSED&quot;,
+   &quot;devDependencies&quot;: {
+     &quot;@fortawesome/fontawesome-free&quot;: &quot;^5.13.0&quot;,
+     &quot;@types/highlight.js&quot;: &quot;^9.12.3&quot;,
+@@ -6,26 +7,33 @@
+     &quot;@typescript-eslint/eslint-plugin&quot;: &quot;^2.32.0&quot;,
+     &quot;@typescript-eslint/parser&quot;: &quot;^2.32.0&quot;,
+     &quot;browser-sync&quot;: &quot;^2.26.7&quot;,
++    &quot;css-loader&quot;: &quot;^6.7.1&quot;,
+     &quot;dom&quot;: &quot;0.0.3&quot;,
+     &quot;eslint&quot;: &quot;^6.8.0&quot;,
+     &quot;eslint-config-prettier&quot;: &quot;^6.11.0&quot;,
+     &quot;eslint-loader&quot;: &quot;^3.0.4&quot;,
+     &quot;eslint-plugin-prettier&quot;: &quot;^3.1.3&quot;,
+-    &quot;gulp&quot;: &quot;^4.0.2&quot;,
+-    &quot;gulp-rename&quot;: &quot;^2.0.0&quot;,
+-    &quot;gulp-sass&quot;: &quot;^4.1.0&quot;,
+-    &quot;gulp-sourcemaps&quot;: &quot;^2.6.5&quot;,
+     &quot;highlight.js&quot;: &quot;^10.4.1&quot;,
+     &quot;instantclick&quot;: &quot;^3.1.0&quot;,
+-    &quot;npm-check-updates&quot;: &quot;^4.1.2&quot;,
++    &quot;mini-css-extract-plugin&quot;: &quot;^2.6.1&quot;,
++    &quot;npm-check-updates&quot;: &quot;^16.3.3&quot;,
+     &quot;path&quot;: &quot;^0.12.7&quot;,
+     &quot;prettier&quot;: &quot;^1.19.1&quot;,
+     &quot;pretty-quick&quot;: &quot;^2.0.1&quot;,
++    &quot;sass&quot;: &quot;^1.55.0&quot;,
++    &quot;sass-loader&quot;: &quot;^13.0.2&quot;,
+     &quot;scroll-out&quot;: &quot;^2.2.8&quot;,
+     &quot;ts-loader&quot;: &quot;^6.2.2&quot;,
+     &quot;typescript&quot;: &quot;^3.8.3&quot;,
+-    &quot;webpack&quot;: &quot;^4.43.0&quot;,
+-    &quot;webpack-cli&quot;: &quot;^3.3.11&quot;,
+-    &quot;webpack-stream&quot;: &quot;^5.2.1&quot;
++    &quot;webpack&quot;: &quot;5.0.0&quot;,
++    &quot;webpack-cli&quot;: &quot;^4.0.0&quot;,
++    &quot;webpack-dev-server&quot;: &quot;^4.11.1&quot;,
++    &quot;webpack-fix-style-only-entries&quot;: &quot;^0.6.1&quot;,
++    &quot;webpack-stream&quot;: &quot;^5.2.1&quot;,
++    &quot;yarn&quot;: &quot;^1.22.19&quot;
++  },
++  &quot;scripts&quot;: {
++    &quot;build&quot;: &quot;webpack --mode development&quot;,
++    &quot;serve&quot;: &quot;webpack serve --mode development&quot;
+   }
+ }
+</code></pre>
+
+<p>バージョンアップ等もして、ビルドしてみると下記のようなエラーが大量に発生します。</p>
+
+<pre><code class="language-sh">&gt; docker compose run --rm node npm run build
+
+ERROR in /newb.tokyo/node_modules/@types/express-serve-static-core/index.d.ts
+[tsl] ERROR in /newb.tokyo/node_modules/@types/express-serve-static-core/index.d.ts(99,68)
+      TS1110: Type expected.
+
+ERROR in /newb.tokyo/node_modules/@types/express-serve-static-core/index.d.ts
+[tsl] ERROR in /newb.tokyo/node_modules/@types/express-serve-static-core/index.d.ts(99,77)
+      TS1005: '}' expected.
+
+ERROR in /newb.tokyo/node_modules/@types/express-serve-static-core/index.d.ts
+[tsl] ERROR in /newb.tokyo/node_modules/@types/express-serve-static-core/index.d.ts(99,78)
+      TS1128: Declaration or statement expected.
+
+ERROR in /newb.tokyo/node_modules/@types/express-serve-static-core/index.d.ts
+[tsl] ERROR in /newb.tokyo/node_modules/@types/express-serve-static-core/index.d.ts(99,80)
+      TS1005: ';' expected.
+
+ERROR in /newb.tokyo/node_modules/@types/express-serve-static-core/index.d.ts
+[tsl] ERROR in /newb.tokyo/node_modules/@types/express-serve-static-core/index.d.ts(101,33)
+      TS1005: ';' expected.
+
+ERROR in /newb.tokyo/node_modules/@types/express-serve-static-core/index.d.ts
+[tsl] ERROR in /newb.tokyo/node_modules/@types/express-serve-static-core/index.d.ts(101,48)
+      TS1005: ';' expected.
+
+ERROR in /newb.tokyo/node_modules/@types/express-serve-static-core/index.d.ts
+[tsl] ERROR in /newb.tokyo/node_modules/@types/express-serve-static-core/index.d.ts(102,8)
+      TS1005: ';' expected.
+
+ERROR in /newb.tokyo/node_modules/@types/express-serve-static-core/index.d.ts
+[tsl] ERROR in /newb.tokyo/node_modules/@types/express-serve-static-core/index.d.ts(108,22)
+      TS1005: ';' expected.
+...
+</code></pre>
+
+<p>どうやら express-serve-static-core の <code>4.17.20</code> で発生している不具合で、 <code>4.17.6</code> までバージョンダウンすれば良いとのこと
+<a href="https://github.com/DefinitelyTyped/DefinitelyTyped/issues/53397">https://github.com/DefinitelyTyped/DefinitelyTyped/issues/53397</a></p>
+
+<p>package.json に下記を追加してバージョンを固定</p>
+
+<pre><code class="language-json">  &quot;resolutions&quot;: {
+    &quot;@types/express-serve-static-core&quot;: &quot;4.7.16&quot;
+  },
+</code></pre>
+
+<p>ビルド実行</p>
+
+<pre><code class="language-sh">&gt; docker compose run --rm node yarn
+
+&gt; docker compose run --rm node npm run build
+</code></pre>
+
+<p>無事にエラーは出なくなりました。</p>
+
+<h3 id="おわり">おわり</h3>
+
+<p>hugo もかなりバージョンアップが来ているようなので、近いうちにアップデートしようかなと考えています。</p>
+</div>
+
+  
+  
+  
+  
+  <div class="shares">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="umasoya" data-text="放置していていたブログのメンテナンスをした話 | newb.tokyo" data-lang="ja">Tweet</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-counter" title="このエントリーをはてなブックマークに追加">
+        <img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" />
+    </a>
+    <script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+</div>
+
+</article>
+</main>
+<footer class="footer">
+  <span>&copy; 2022 umasoya</span>
+</footer>
+
+<script src="https://newb.tokyo/js/app.js"></script>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-108444633-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+
