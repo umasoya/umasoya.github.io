@@ -16,7 +16,6 @@
     "highlight.js": "^10.4.1",
     "instantclick": "^3.1.0",
     "mini-css-extract-plugin": "^2.6.1",
-    "npm-check-updates": "^16.3.3",
     "path": "^0.12.7",
     "prettier": "^1.19.1",
     "pretty-quick": "^2.0.1",
@@ -33,7 +32,8 @@
     "yarn": "^1.22.19"
   },
   "resolutions": {
-    "@types/express-serve-static-core": "4.7.16"
+    "@types/express-serve-static-core": "<=4.7.16",
+    "glob-parent": "^5.1.2"
   },
   "scripts": {
     "build": "webpack --mode development",
