@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../img/apple-touch-icon.png">
   <link rel="icon" href="../../img/favicon.ico">
   
-  <meta name="generator" content="Hugo 0.59.0">
+  <meta name="generator" content="Hugo 0.104.3">
   
   <link rel="alternate" type="application/atom+xml" href="https://newb.tokyo/index.xml" title="newb.tokyo">
 </head>
@@ -61,13 +61,9 @@
     </ul>
     
   </header>
-  <div class="post-content">
-
-<p>仕事での開発マシンは<code>Windows</code>を使用しているので、
+  <div class="post-content"><p>仕事での開発マシンは<code>Windows</code>を使用しているので、
 現在の開発環境をメモ程度に書いておく。</p>
-
 <h2 id="tools">tools</h2>
-
 <table>
 <thead>
 <tr>
@@ -75,76 +71,53 @@
 <th>name</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
 <td>Terminal Emulator</td>
 <td><a href="https://github.com/goreliu/wsl-terminal">wsl_terminal</a></td>
 </tr>
-
 <tr>
 <td>Terminal Multiplexer</td>
 <td><a href="https://github.com/tmux/tmux">tmux</a></td>
 </tr>
-
 <tr>
 <td>Editor</td>
 <td><a href="https://github.com/neovim/neovim">neovim</a></td>
 </tr>
-
 <tr>
 <td>VM</td>
 <td><a href="https://www.virtualbox.org/">virtualbox</a> + <a href="https://www.vagrantup.com/">vagrant</a></td>
 </tr>
-
 <tr>
 <td>Filer</td>
 <td><a href="http://nekomimi.la.coocan.jp/freesoft/nyanfi.htm">NyanFi</a></td>
 </tr>
 </tbody>
 </table>
-
-<h3 id="wsl-terminal">wsl_terminal</h3>
-
-<p>WSLで使えるターミナルエミュレータ<br />
-見た目が好きだったので使用している。<br />
+<h3 id="wsl_terminal">wsl_terminal</h3>
+<p>WSLで使えるターミナルエミュレータ<br>
+見た目が好きだったので使用している。<br>
 デフォルトでは起動時のログインシェルは<code>bash</code>だが、設定ファイルで変更することができる。</p>
-
 <p><code>etc/wsl-terminal.conf</code> example:</p>
-
-<pre><code>[config]
+<pre tabindex="0"><code>[config]
 shell=/bin/zsh
-</code></pre>
-
-<h3 id="tmux">tmux</h3>
-
+</code></pre><h3 id="tmux">tmux</h3>
 <p>画面分割</p>
-
 <h3 id="neovim">neovim</h3>
-
-<p><code>vim</code>の進化系みたいなもの<br />
+<p><code>vim</code>の進化系みたいなもの<br>
 <code>vim</code>ではなく<code>neovim</code>を選んだ理由は、カーソルを移動したときにvimの場合は画面全てを再描画するためカーソル位置の行と列に色を付けるとめちゃくちゃ重くなるから。neovimはそのへんを上手くやっているらしくサクサク動いてくれる。</p>
-
 <h3 id="vm">VM</h3>
-
-<p>WSL上でも<code>docker</code>は動くのだが、まだ制約がキツく使い勝手が悪そうなのでVM上でdocokerを動かすために入れている。<br />
+<p>WSL上でも<code>docker</code>は動くのだが、まだ制約がキツく使い勝手が悪そうなのでVM上でdocokerを動かすために入れている。<br>
 WSL側からwindowsでインストールした<code>VirtualBox</code>と<code>vagrant</code>を使うためには環境変数を設定する必要がある。</p>
-
-<pre><code class="language-.envrc">export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS=1
-export PATH=&quot;$PATH:/mnt/c/Program Files/Oracle/VirtualBox&quot;
+<pre tabindex="0"><code class="language-.envrc" data-lang=".envrc">export VAGRANT_WSL_ENABLE_WINDOWS_ACCESS=1
+export PATH=&#34;$PATH:/mnt/c/Program Files/Oracle/VirtualBox&#34;
 # .envrcの場合は PATH_add というエイリアスを使ってもOK
-PATH_add &quot;$PATH:/mnt/c/Program Files/Oracle/VirtualBox&quot;
-</code></pre>
-
-<p>あとは普通にVMを起動してdockerを使うだけ。</p>
-
+PATH_add &#34;$PATH:/mnt/c/Program Files/Oracle/VirtualBox&#34;
+</code></pre><p>あとは普通にVMを起動してdockerを使うだけ。</p>
 <h3 id="nyanfi">NyanFi</h3>
-
-<p>かつて使用していた<code>あふw</code>のような2画面ファイラ。<br />
+<p>かつて使用していた<code>あふw</code>のような2画面ファイラ。<br>
 最近は標準のエクスプローラを使っているのでほぼ起動しない。</p>
-
 <h2 id="あとがき">あとがき</h2>
-
 <p>WSLが順当に使いやすく進歩していて、非常にありがたい。
 あとは<code>docker</code>が普通に使えるようになれば特に文句は無くなるので、MicroSoftさんにはこれからもぜひ頑張っていただきたい。</p>
 </div>

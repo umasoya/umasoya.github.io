@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../img/apple-touch-icon.png">
   <link rel="icon" href="../../img/favicon.ico">
   
-  <meta name="generator" content="Hugo 0.59.0">
+  <meta name="generator" content="Hugo 0.104.3">
   
   <link rel="alternate" type="application/atom+xml" href="https://newb.tokyo/index.xml" title="newb.tokyo">
 </head>
@@ -59,53 +59,36 @@
     </ul>
     
   </header>
-  <div class="post-content">
-
-<p>ついにChromebookでLinuxがつかえるようになりました。
+  <div class="post-content"><p>ついにChromebookでLinuxがつかえるようになりました。
 2018年5月の「Google I/O」にて発表があったものが8月にBeta版として利用可能になりました。
 なので軽くレビューを書こうと思います。</p>
-
 <h2 id="linux機能の有効化">Linux機能の有効化</h2>
-
 <p>設定のLinux（ベータ版）のところにある <code>有効化</code>ボタンをクリックすると有効化されます。
 ※ 画像は有効化後の設定画面です。</p>
-
-<p><img src="./screenshot.png" alt="screenshot" /></p>
-
+<p><img src="./screenshot.png" alt="screenshot"></p>
 <p>しばらく放置しておくとターミナルアプリが追加されるのでそれを実行するとBashが起動してLinuxが操作できます。</p>
-
 <h2 id="system">System</h2>
-
-<pre><code class="language-sh">&gt; uname -a
-Linux penguin 4.14.74-07776-gac52e5f750c8 #1 SMP PREEMPT Thu Dec 6 17:36:39 PST 2018x86_64 GNU/Linux
-&gt; cat /etc/os-release
-PRETTY_NAME=&quot;Debian GNU/Linux 9 (stretch)&quot;
-NAME=&quot;Debian GNU/Linux&quot;
-VERSION_ID=&quot;9&quot;
-VERSION=&quot;9 (stretch)&quot;
-ID=debian
-HOME_URL=&quot;https://www.debian.org/&quot;
-SUPPORT_URL=&quot;https://www.debian.org/support&quot;
-BUG_REPORT_URL=&quot;https://bugs.debian.org/&quot;
-</code></pre>
-
-<p>起動するのは普通のDebianなので 、<code>apt-get</code> で必要なものを入れればいいです。</p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>&gt; uname -a
+</span></span><span style="display:flex;"><span>Linux penguin 4.14.74-07776-gac52e5f750c8 <span style="color:#75715e">#1 SMP PREEMPT Thu Dec 6 17:36:39 PST 2018x86_64 GNU/Linux</span>
+</span></span><span style="display:flex;"><span>&gt; cat /etc/os-release
+</span></span><span style="display:flex;"><span>PRETTY_NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Debian GNU/Linux 9 (stretch)&#34;</span>
+</span></span><span style="display:flex;"><span>NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Debian GNU/Linux&#34;</span>
+</span></span><span style="display:flex;"><span>VERSION_ID<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;9&#34;</span>
+</span></span><span style="display:flex;"><span>VERSION<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;9 (stretch)&#34;</span>
+</span></span><span style="display:flex;"><span>ID<span style="color:#f92672">=</span>debian
+</span></span><span style="display:flex;"><span>HOME_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.debian.org/&#34;</span>
+</span></span><span style="display:flex;"><span>SUPPORT_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.debian.org/support&#34;</span>
+</span></span><span style="display:flex;"><span>BUG_REPORT_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://bugs.debian.org/&#34;</span>
+</span></span></code></pre></div><p>起動するのは普通のDebianなので 、<code>apt-get</code> で必要なものを入れればいいです。</p>
 <h2 id="メリット">メリット</h2>
-
 <p><code>docker</code> が使えるようになったのが個人的に一番嬉しいポイントです。
 感覚的には Windowsの<code>WSL(Windows Subsystem Linux)</code> に近いですが、あちらは <code>docker</code> を使うのに細々とした設定が必要なのでその点ではこちらの方が優秀。</p>
-
 <h2 id="デメリット">デメリット</h2>
-
 <p>以前の記事に書いたように、やはり文字入力周りはおぼつかない。
 あとこれはChromebook自体の問題なんですが、開発環境として使えるようになるとやはりパワー不足感が否めないです。
 開発環境として使えるようになるとやはりパワー不足感が否めないです。</p>
-
 <p>Pythonのビルドと同時平行だったので参考ですが、Neovimのビルドに20分ほどかかりました…</p>
-
 <h2 id="感想">感想</h2>
-
 <p>着々と使い勝手が良くなっているという印象。
 更新頻度も高いですし、家で使うサブ機としては本当に優秀ですね。
 価格も安いですし庶民の味方です。

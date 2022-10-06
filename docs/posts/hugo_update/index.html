@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../img/apple-touch-icon.png">
   <link rel="icon" href="../../img/favicon.ico">
   
-  <meta name="generator" content="Hugo 0.59.0">
+  <meta name="generator" content="Hugo 0.104.3">
   
   <link rel="alternate" type="application/atom+xml" href="https://newb.tokyo/index.xml" title="newb.tokyo">
 </head>
@@ -59,13 +59,9 @@
     </ul>
     
   </header>
-  <div class="post-content">
-
-<p>hugo を <code>0.55.5</code> -&gt; <code>0.59.0</code> にupdateしたところ、 <code>/</code> や <code>/tags/</code> などのリスト形式のページの表示がおかしくなっていた。<br />
+  <div class="post-content"><p>hugo を <code>0.55.5</code> -&gt; <code>0.59.0</code> にupdateしたところ、 <code>/</code> や <code>/tags/</code> などのリスト形式のページの表示がおかしくなっていた。<br>
 原因は <code>0.57.0</code> で <code>.Pages</code> に <code>publishDir/</code> 以下のすべてのページが含まれるように変更されたことだった。<a href="https://github.com/gohugoio/hugo/issues/6153">#6153</a></p>
-
 <h2 id="修正方法">修正方法</h2>
-
 <p><code>layout</code> の中で <code>.Pages</code> を使っていた箇所を <code>.Site.RegularPages</code> に書き換える。</p>
 </div>
 

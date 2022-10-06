@@ -6,18 +6,14 @@
     <description>Recent content in Laravel on newb.tokyo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <lastBuildDate>Wed, 24 Jul 2019 06:34:31 +0000</lastBuildDate>
-    
-	<atom:link href="https://newb.tokyo/tags/laravel/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 24 Jul 2019 06:34:31 +0000</lastBuildDate><atom:link href="https://newb.tokyo/tags/laravel/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【Laravel】ネストしたリレーションをEager loadingするときにクエリを追加する</title>
       <link>https://newb.tokyo/posts/nested_relation/</link>
       <pubDate>Wed, 24 Jul 2019 06:34:31 +0000</pubDate>
       
       <guid>https://newb.tokyo/posts/nested_relation/</guid>
-      <description>Category,Title,Subtitle という3つのモデルを例にする。 Category &amp;lt;?php class Category extends Eloquent { protected $table = &#39;category&#39;; public function title() { return $this-&amp;gt;hasMany(&#39;Title&#39;); } } Title &amp;lt;?php class Title extends Eloquent { protected $table = &#39;title&#39;; public function subtitle() { return $this-&amp;gt;hasMany(&#39;Subtitle&#39;); } } Subtitle &amp;lt;?php class Subtitle extends Eloquent { protected $table = &#39;subtitle&#39;; } 普通にE</description>
+      <description>Category,Title,Subtitle という3つのモデルを例にする。 Category &amp;lt;?php class Category extends Eloquent { protected $table = &amp;#39;category&amp;#39;; public function title() { return $this-&amp;gt;hasMany(&amp;#39;Title&amp;#39;); } } Title &amp;lt;?php class Title extends Eloquent { protected $table = &amp;#39;title&amp;#39;; public function subtitle() { return $this-&amp;gt;hasMany(&amp;#39;Subtitle&amp;#39;); } } Subtitle &amp;lt;?php class Subtitle extends Eloquent { protected $table = &amp;#39;subtitle&amp;#39;; } 普通にE</description>
     </item>
     
   </channel>

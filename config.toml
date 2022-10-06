@@ -15,6 +15,13 @@ author = "umasoya"
 # hugo-paper color style
 color = "linen" # linen, wheat, gray, light
 
+# SNS
+twitter   = 'umasoya'
+github    = 'umasoya'
+instagram = 'umasoya0331'
+facebook  = 'umasoya0331'
+linkedin  = 'umasoya'
+
 [[params.menu]]
 name = "home"
 path = "/"

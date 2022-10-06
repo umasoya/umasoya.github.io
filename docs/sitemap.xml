@@ -1,149 +1,97 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
+    <loc>https://newb.tokyo/tags/frontend/</loc>
+    <lastmod>2022-09-30T09:59:27+00:00</lastmod>
+  </url><url>
+    <loc>https://newb.tokyo/tags/it/</loc>
+    <lastmod>2022-09-30T09:59:27+00:00</lastmod>
+  </url><url>
     <loc>https://newb.tokyo/</loc>
     <lastmod>2022-09-30T09:59:27+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://newb.tokyo/tags/node.js/</loc>
+    <lastmod>2022-09-30T09:59:27+00:00</lastmod>
+  </url><url>
     <loc>https://newb.tokyo/posts/</loc>
     <lastmod>2022-09-30T09:59:27+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://newb.tokyo/tags/</loc>
+    <lastmod>2022-09-30T09:59:27+00:00</lastmod>
+  </url><url>
     <loc>https://newb.tokyo/posts/update_tools_used_in_blog/</loc>
     <lastmod>2022-09-30T09:59:27+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://newb.tokyo/posts/windows_terminal/</loc>
     <lastmod>2020-05-21T04:37:10+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://newb.tokyo/tags/golang/</loc>
     <lastmod>2019-10-29T15:00:17+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://newb.tokyo/tags/hugo/</loc>
     <lastmod>2019-10-29T15:00:17+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://newb.tokyo/posts/hugo_update/</loc>
     <lastmod>2019-10-29T15:00:17+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://newb.tokyo/tags/it/</loc>
-    <lastmod>2019-10-29T15:00:17+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://newb.tokyo/tags/</loc>
-    <lastmod>2019-10-29T15:00:17+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://newb.tokyo/tags/laravel/</loc>
-    <lastmod>2019-07-24T06:34:31+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://newb.tokyo/tags/php/</loc>
-    <lastmod>2019-07-24T06:34:31+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://newb.tokyo/posts/nested_relation/</loc>
     <lastmod>2019-07-24T06:34:31+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://newb.tokyo/tags/laravel/</loc>
+    <lastmod>2019-07-24T06:34:31+00:00</lastmod>
+  </url><url>
+    <loc>https://newb.tokyo/tags/php/</loc>
+    <lastmod>2019-07-24T06:34:31+00:00</lastmod>
+  </url><url>
     <loc>https://newb.tokyo/tags/mysql/</loc>
     <lastmod>2019-05-16T07:23:37+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://newb.tokyo/posts/update_conf_without_restart_mysql/</loc>
     <lastmod>2019-05-16T07:23:37+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://newb.tokyo/tags/%E3%83%A1%E3%83%A2/</loc>
     <lastmod>2019-05-16T07:23:37+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://newb.tokyo/tags/chromebook/</loc>
     <lastmod>2019-02-14T14:32:11+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://newb.tokyo/posts/chromebook_is_god/</loc>
     <lastmod>2019-02-14T14:32:11+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://newb.tokyo/tags/review/</loc>
     <lastmod>2019-02-14T14:32:11+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://newb.tokyo/posts/unusable_chromebook/</loc>
     <lastmod>2018-12-07T10:11:17+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://newb.tokyo/tags/linux/</loc>
     <lastmod>2018-09-13T10:53:31+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://newb.tokyo/tags/windows/</loc>
     <lastmod>2018-09-13T10:53:31+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://newb.tokyo/tags/wsl/</loc>
     <lastmod>2018-09-13T10:53:31+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://newb.tokyo/posts/wsl_environment/</loc>
     <lastmod>2018-09-13T10:53:31+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://newb.tokyo/about/</loc>
     <lastmod>2018-08-31T16:58:58+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://newb.tokyo/tags/cafe/</loc>
     <lastmod>2018-08-28T01:37:21+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://newb.tokyo/tags/life/</loc>
     <lastmod>2018-08-28T01:37:21+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://newb.tokyo/posts/cat_cafe/</loc>
     <lastmod>2018-08-28T01:37:21+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://newb.tokyo/tags/%E7%8C%AB%E3%82%AB%E3%83%95%E3%82%A7/</loc>
     <lastmod>2018-08-28T01:37:21+09:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://newb.tokyo/categories/</loc>
   </url>
-  
 </urlset>

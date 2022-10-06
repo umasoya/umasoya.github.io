@@ -5,10 +5,6 @@
     <link>https://newb.tokyo/categories/</link>
     <description>Recent content in Categories on newb.tokyo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-JP</language>
-    
-	<atom:link href="https://newb.tokyo/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>ja-JP</language><atom:link href="https://newb.tokyo/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
