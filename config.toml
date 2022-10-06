@@ -12,6 +12,9 @@ relativeUrls = true
 [params]
 author = "umasoya"
 
+# hugo-paper color style
+color = "linen" # linen, wheat, gray, light
+
 [[params.menu]]
 name = "home"
 path = "/"
