@@ -9,10 +9,10 @@
     <lastBuildDate>Thu, 16 May 2019 07:23:37 +0000</lastBuildDate><atom:link href="https://newb.tokyo/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MySQLの設定を再起動せず変更する</title>
-      <link>https://newb.tokyo/posts/update_conf_without_restart_mysql/</link>
+      <link>https://newb.tokyo/posts/20190516_update_conf_without_restart_mysql/</link>
       <pubDate>Thu, 16 May 2019 07:23:37 +0000</pubDate>
       
-      <guid>https://newb.tokyo/posts/update_conf_without_restart_mysql/</guid>
+      <guid>https://newb.tokyo/posts/20190516_update_conf_without_restart_mysql/</guid>
       <description>SET GLOBAL 変数名=値 or SET @@global.変数名=値 これだけだと再起動したときに設定が消えてしまうので、必ず my.cnf も変更しておく。</description>
     </item>
     

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <title>ChromebookのLinuxが使えるようになった - newb.tokyo</title>
+  
+  <meta name="description" content="ついにChromebookでLinuxがつかえるようになりました。 2018年5月の「Google I/O」にて発表があったものが8月にBeta">
+  <meta name="author" content="umasoya">
+  
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
+  <link href="../../css/style.css" rel="stylesheet" type="text/css">
+  
+  
+  <link href="https://newb.tokyo/css/app.min.css" rel="stylesheet">
+  
+  <link rel="apple-touch-icon" href="../../img/apple-touch-icon.png">
+  <link rel="icon" href="../../img/favicon.ico">
+  
+  <meta name="generator" content="Hugo 0.104.3">
+  
+  <link rel="alternate" type="application/atom+xml" href="https://newb.tokyo/index.xml" title="newb.tokyo">
+</head>
+
+<body class="single">
+  <header class="header">
+    
+    <p class="title"><a href="https://newb.tokyo">newb.tokyo</a></p>
+    
+
+    <p class="menuList">
+    
+        <a href="../../">home</a>
+        <span class="separator">&frasl;</span>
+    
+        <a href="../../about/">about</a>
+        
+    
+    </p>
+  </header>
+  <main class="main ">
+
+<article class="post post-view">
+  <header class="post-header">
+    <h1 class="post-title">ChromebookのLinuxが使えるようになった</h1>
+    <p class="post-meta">2019.2.14</p>
+    
+    <ul class="post-tags">
+      
+      <li><a href="https://newb.tokyo/tags/chromebook/">Chromebook</a></li>
+      
+      <li><a href="https://newb.tokyo/tags/it/">IT</a></li>
+      
+      <li><a href="https://newb.tokyo/tags/review/">review</a></li>
+      
+    </ul>
+    
+  </header>
+  <div class="post-content"><p>ついにChromebookでLinuxがつかえるようになりました。
+2018年5月の「Google I/O」にて発表があったものが8月にBeta版として利用可能になりました。
+なので軽くレビューを書こうと思います。</p>
+<h2 id="linux機能の有効化">Linux機能の有効化</h2>
+<p>設定のLinux（ベータ版）のところにある <code>有効化</code>ボタンをクリックすると有効化されます。
+※ 画像は有効化後の設定画面です。</p>
+<p><img src="./screenshot.png" alt="screenshot"></p>
+<p>しばらく放置しておくとターミナルアプリが追加されるのでそれを実行するとBashが起動してLinuxが操作できます。</p>
+<h2 id="system">System</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>&gt; uname -a
+</span></span><span style="display:flex;"><span>Linux penguin 4.14.74-07776-gac52e5f750c8 <span style="color:#75715e">#1 SMP PREEMPT Thu Dec 6 17:36:39 PST 2018x86_64 GNU/Linux</span>
+</span></span><span style="display:flex;"><span>&gt; cat /etc/os-release
+</span></span><span style="display:flex;"><span>PRETTY_NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Debian GNU/Linux 9 (stretch)&#34;</span>
+</span></span><span style="display:flex;"><span>NAME<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Debian GNU/Linux&#34;</span>
+</span></span><span style="display:flex;"><span>VERSION_ID<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;9&#34;</span>
+</span></span><span style="display:flex;"><span>VERSION<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;9 (stretch)&#34;</span>
+</span></span><span style="display:flex;"><span>ID<span style="color:#f92672">=</span>debian
+</span></span><span style="display:flex;"><span>HOME_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.debian.org/&#34;</span>
+</span></span><span style="display:flex;"><span>SUPPORT_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://www.debian.org/support&#34;</span>
+</span></span><span style="display:flex;"><span>BUG_REPORT_URL<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;https://bugs.debian.org/&#34;</span>
+</span></span></code></pre></div><p>起動するのは普通のDebianなので 、<code>apt-get</code> で必要なものを入れればいいです。</p>
+<h2 id="メリット">メリット</h2>
+<p><code>docker</code> が使えるようになったのが個人的に一番嬉しいポイントです。
+感覚的には Windowsの<code>WSL(Windows Subsystem Linux)</code> に近いですが、あちらは <code>docker</code> を使うのに細々とした設定が必要なのでその点ではこちらの方が優秀。</p>
+<h2 id="デメリット">デメリット</h2>
+<p>以前の記事に書いたように、やはり文字入力周りはおぼつかない。
+あとこれはChromebook自体の問題なんですが、開発環境として使えるようになるとやはりパワー不足感が否めないです。
+開発環境として使えるようになるとやはりパワー不足感が否めないです。</p>
+<p>Pythonのビルドと同時平行だったので参考ですが、Neovimのビルドに20分ほどかかりました…</p>
+<h2 id="感想">感想</h2>
+<p>着々と使い勝手が良くなっているという印象。
+更新頻度も高いですし、家で使うサブ機としては本当に優秀ですね。
+価格も安いですし庶民の味方です。
+メインマシンを買うだけの余裕が出来るまでしばらくは活躍してくれそうです。</p>
+</div>
+
+  
+  
+  
+  
+  <div class="shares">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="umasoya" data-text="ChromebookのLinuxが使えるようになった | newb.tokyo" data-lang="ja">Tweet</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-counter" title="このエントリーをはてなブックマークに追加">
+        <img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" />
+    </a>
+    <script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+</div>
+
+</article>
+</main>
+<footer class="footer">
+  <span>&copy; 2022 umasoya</span>
+</footer>
+
+<script src="https://newb.tokyojs/app.js"></script>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-108444633-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+

@@ -14,12 +14,26 @@
 
 {{ if gt $paginator.TotalPages 0 }}
   {{ range $index, $page := $paginator.Pages }}
+
     {{ if and $.IsHome (eq $paginator.PageNumber 1) (eq $index 0) }}
       {{ .Scratch.Set "postClass" "first-entry" }}
     {{ else }}
       {{ .Scratch.Set "postClass" "post-entry" }}
     {{ end }}
-    <article class="post {{ .Scratch.Get `postClass` }}">
+
+    {{/* Concatenate tags to string */}}
+    {{ if eq .Params.tags nil}}
+      {{ .Scratch.Set "postTags" "" }}
+    {{ else }}
+      {{ $lowerTags := slice }}
+      {{range $tag := .Params.tags}}
+        {{/* replace "." to "_" */}}
+        {{ $lowerTags = $lowerTags | append (replace (lower $tag) "." "_") }}
+      {{ end }}
+      {{ .Scratch.Set "postTags" (delimit $lowerTags " ") }}
+    {{ end }}
+
+    <article class="post {{ .Scratch.Get `postClass` }}" data-tags="{{ .Scratch.Get `postTags` }}">
       <header class="post-header">
         <h2 class="post-title">{{ .Title }}</h2>
       </header>

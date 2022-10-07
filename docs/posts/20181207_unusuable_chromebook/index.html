@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <title>やっぱChromebookで開発は辛い - newb.tokyo</title>
+  
+  <meta name="description" content="以前、Chromebookが案外悪くないという記事を書いた。 たしかにブラウジングする程度であれば安価だしちゃんと動くのでいい感じだ。 しかし開">
+  <meta name="author" content="umasoya">
+  
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
+  <link href="../../css/style.css" rel="stylesheet" type="text/css">
+  
+  
+  <link href="https://newb.tokyo/css/app.min.css" rel="stylesheet">
+  
+  <link rel="apple-touch-icon" href="../../img/apple-touch-icon.png">
+  <link rel="icon" href="../../img/favicon.ico">
+  
+  <meta name="generator" content="Hugo 0.104.3">
+  
+  <link rel="alternate" type="application/atom+xml" href="https://newb.tokyo/index.xml" title="newb.tokyo">
+</head>
+
+<body class="single">
+  <header class="header">
+    
+    <p class="title"><a href="https://newb.tokyo">newb.tokyo</a></p>
+    
+
+    <p class="menuList">
+    
+        <a href="../../">home</a>
+        <span class="separator">&frasl;</span>
+    
+        <a href="../../about/">about</a>
+        
+    
+    </p>
+  </header>
+  <main class="main ">
+
+<article class="post post-view">
+  <header class="post-header">
+    <h1 class="post-title">やっぱChromebookで開発は辛い</h1>
+    <p class="post-meta">2018.12.7</p>
+    
+    <ul class="post-tags">
+      
+      <li><a href="https://newb.tokyo/tags/chromebook/">Chromebook</a></li>
+      
+      <li><a href="https://newb.tokyo/tags/it/">IT</a></li>
+      
+      <li><a href="https://newb.tokyo/tags/review/">review</a></li>
+      
+    </ul>
+    
+  </header>
+  <div class="post-content"><p>以前、Chromebookが案外悪くないという記事を書いた。
+たしかにブラウジングする程度であれば安価だしちゃんと動くのでいい感じだ。
+しかし開発に使うとなるとやっぱ辛い。</p>
+<h2 id="developer-モードで起動しなければいけない">developer モードで起動しなければいけない</h2>
+<p><code>terminal</code>を使うとなると 起動時にdeveloperモードにしなければなれない。
+『ESC』 + 『リロード』 + 『電源』 を押してリカバリーモードで起動してdeveloperモードに移行する。ここまでは良い。
+「Chrome OSが存在しないか破損しています。」という初見だと嫌な汗が出そうなメッセージが表示されたら成功。(なんか他にいいメッセージなかったんか…)
+この画面で 『ctrl』 + 『d』を押してあとは放っておけばdeveloperモードに移行します。</p>
+<h3 id="次回移行起動するたびにctrl--d">次回移行起動するたびに『ctrl』 + 『d』</h3>
+<p>起動時に毎回『ctrl』 + 『d』 を押さなければdeveloperモードにならないのだが、まずどのキーを押すのか忘れる。
+画面上に「開発者モードで起動する場合は ctrl + d」とでも書いておいてくれればいいのに残念ながら書いていない。
+それどころか「Spaceキーを押してください」と書いてある。</p>
+<h3 id="spaceを押すとローカルのデータが消される">Spaceを押すとローカルのデータが消される</h3>
+<p>これがほんとにクソだと思う。
+『Space』を押すと通常のモードで起動する。
+ChromeOS は基本ローカルにデータを保存するという設計ではない。GoogleDrive を使用してクラウド上にデータを置くのが基本だ。
+あくまでローカルのストレージにはオフライン時に作業するときに一時的にファイルを置いておく程度の想定しかしていない。(そのおかげでストレージの容量を削減でき安価)
+容量不足で動作が重くなるなんていうこともなくメリットも大きい。</p>
+<p>しかし、だからといってdeveloperモードでローカルに保存したデータを消すなよ！と言いたい。
+開発するとなると、ローカルストレージには開発用のアプリケーションやソースコードなど色々と置いておく必要がある。しこしこと作り上げた開発環境が、画面のメッセージに従って『Space』を押した瞬間一発で消し飛ぶ。</p>
+<h2 id="docker-動かない">docker 動かない</h2>
+<p>使えるようにしよう！という流れはあるみたいですが、今のところ使えません。</p>
+<h2 id="vm-も無理">VM も無理</h2>
+<p>docker と同じく今のところ使えません。</p>
+<h2 id="chroot環境は機種による">chroot環境は機種による(?)</h2>
+<p><code>crouton</code> を使用したchroot環境で <code>ubuntu</code> を使うという方法もあるようですが、機種によるのか私の環境ではダメでした。</p>
+<h2 id="何が言いたいのかというと">何が言いたいのかというと</h2>
+<p>普段使いには良いけど開発は辛いよというお話でした。
+ちなみに私は、</p>
+<pre tabindex="0"><code>時間無い + ググらないとッ !! + 『Space』押したら開発者モードだっけ…? = Spaceﾎﾟﾁｰ
+</code></pre><p>でやらかしました。</p>
+</div>
+
+  
+  
+  
+  
+  <div class="shares">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="umasoya" data-text="やっぱChromebookで開発は辛い | newb.tokyo" data-lang="ja">Tweet</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-counter" title="このエントリーをはてなブックマークに追加">
+        <img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" />
+    </a>
+    <script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+</div>
+
+</article>
+</main>
+<footer class="footer">
+  <span>&copy; 2022 umasoya</span>
+</footer>
+
+<script src="https://newb.tokyojs/app.js"></script>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-108444633-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+

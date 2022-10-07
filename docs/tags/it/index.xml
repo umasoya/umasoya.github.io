@@ -9,64 +9,64 @@
     <lastBuildDate>Fri, 30 Sep 2022 09:59:27 +0000</lastBuildDate><atom:link href="https://newb.tokyo/tags/it/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>放置していていたブログのメンテナンスをした話</title>
-      <link>https://newb.tokyo/posts/update_tools_used_in_blog/</link>
+      <link>https://newb.tokyo/posts/20220930_update_tools_used_in_blog/</link>
       <pubDate>Fri, 30 Sep 2022 09:59:27 +0000</pubDate>
       
-      <guid>https://newb.tokyo/posts/update_tools_used_in_blog/</guid>
+      <guid>https://newb.tokyo/posts/20220930_update_tools_used_in_blog/</guid>
       <description>久しく放置していたこのブログのメンテンスを実施しました。 フロントまわりのツール類は変化が早く、陳腐化していたため整理&amp;amp;アップデートを</description>
     </item>
     
     <item>
       <title>hugoをupdateしたらトップページがおかしくなったので直した話</title>
-      <link>https://newb.tokyo/posts/hugo_update/</link>
+      <link>https://newb.tokyo/posts/20191029_hugo_update/</link>
       <pubDate>Tue, 29 Oct 2019 15:00:17 +0000</pubDate>
       
-      <guid>https://newb.tokyo/posts/hugo_update/</guid>
+      <guid>https://newb.tokyo/posts/20191029_hugo_update/</guid>
       <description>hugo を 0.55.5 -&amp;gt; 0.59.0 にupdateしたところ、 / や /tags/ などのリスト形式のページの表示がおかしくなっていた。 原因は 0.57.0 で .Pages に publishDir/ 以下のすべてのページが含まれる</description>
     </item>
     
     <item>
       <title>【Laravel】ネストしたリレーションをEager loadingするときにクエリを追加する</title>
-      <link>https://newb.tokyo/posts/nested_relation/</link>
+      <link>https://newb.tokyo/posts/20190724_nested_relation/</link>
       <pubDate>Wed, 24 Jul 2019 06:34:31 +0000</pubDate>
       
-      <guid>https://newb.tokyo/posts/nested_relation/</guid>
+      <guid>https://newb.tokyo/posts/20190724_nested_relation/</guid>
       <description>Category,Title,Subtitle という3つのモデルを例にする。 Category &amp;lt;?php class Category extends Eloquent { protected $table = &amp;#39;category&amp;#39;; public function title() { return $this-&amp;gt;hasMany(&amp;#39;Title&amp;#39;); } } Title &amp;lt;?php class Title extends Eloquent { protected $table = &amp;#39;title&amp;#39;; public function subtitle() { return $this-&amp;gt;hasMany(&amp;#39;Subtitle&amp;#39;); } } Subtitle &amp;lt;?php class Subtitle extends Eloquent { protected $table = &amp;#39;subtitle&amp;#39;; } 普通にE</description>
     </item>
     
     <item>
       <title>MySQLの設定を再起動せず変更する</title>
-      <link>https://newb.tokyo/posts/update_conf_without_restart_mysql/</link>
+      <link>https://newb.tokyo/posts/20190516_update_conf_without_restart_mysql/</link>
       <pubDate>Thu, 16 May 2019 07:23:37 +0000</pubDate>
       
-      <guid>https://newb.tokyo/posts/update_conf_without_restart_mysql/</guid>
+      <guid>https://newb.tokyo/posts/20190516_update_conf_without_restart_mysql/</guid>
       <description>SET GLOBAL 変数名=値 or SET @@global.変数名=値 これだけだと再起動したときに設定が消えてしまうので、必ず my.cnf も変更しておく。</description>
     </item>
     
     <item>
       <title>ChromebookのLinuxが使えるようになった</title>
-      <link>https://newb.tokyo/posts/chromebook_is_god/</link>
+      <link>https://newb.tokyo/posts/20190214_chromebook_is_god/</link>
       <pubDate>Thu, 14 Feb 2019 14:32:11 +0000</pubDate>
       
-      <guid>https://newb.tokyo/posts/chromebook_is_god/</guid>
+      <guid>https://newb.tokyo/posts/20190214_chromebook_is_god/</guid>
       <description>ついにChromebookでLinuxがつかえるようになりました。 2018年5月の「Google I/O」にて発表があったものが8月にBeta</description>
     </item>
     
     <item>
       <title>やっぱChromebookで開発は辛い</title>
-      <link>https://newb.tokyo/posts/unusable_chromebook/</link>
+      <link>https://newb.tokyo/posts/20181207_unusuable_chromebook/</link>
       <pubDate>Fri, 07 Dec 2018 10:11:17 +0900</pubDate>
       
-      <guid>https://newb.tokyo/posts/unusable_chromebook/</guid>
+      <guid>https://newb.tokyo/posts/20181207_unusuable_chromebook/</guid>
       <description>以前、Chromebookが案外悪くないという記事を書いた。 たしかにブラウジングする程度であれば安価だしちゃんと動くのでいい感じだ。 しかし開</description>
     </item>
     
     <item>
       <title>WSLでの開発環境</title>
-      <link>https://newb.tokyo/posts/wsl_environment/</link>
+      <link>https://newb.tokyo/posts/20180913_wsl_environment/</link>
       <pubDate>Thu, 13 Sep 2018 10:53:31 +0900</pubDate>
       
-      <guid>https://newb.tokyo/posts/wsl_environment/</guid>
+      <guid>https://newb.tokyo/posts/20180913_wsl_environment/</guid>
       <description>仕事での開発マシンはWindowsを使用しているので、 現在の開発環境をメモ程度に書いておく。 tools category name Terminal Emulator wsl_terminal Terminal Multiplexer tmux Editor neovim VM virtualbox + vagrant Filer NyanFi wsl_terminal WSLで使え</description>
     </item>
     

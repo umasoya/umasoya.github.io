@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <title>【Laravel】ネストしたリレーションをEager loadingするときにクエリを追加する - newb.tokyo</title>
+  
+  <meta name="description" content="Category,Title,Subtitle という3つのモデルを例にする。 Category &lt;?php class Category extends Eloquent { protected $table = &#39;category&#39;; public function title() { return $this-&gt;hasMany(&#39;Title&#39;); } } Title &lt;?php class Title extends Eloquent { protected $table = &#39;title&#39;; public function subtitle() { return $this-&gt;hasMany(&#39;Subtitle&#39;); } } Subtitle &lt;?php class Subtitle extends Eloquent { protected $table = &#39;subtitle&#39;; } 普通にE">
+  <meta name="author" content="umasoya">
+  
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
+  <link href="../../css/style.css" rel="stylesheet" type="text/css">
+  
+  
+  <link href="https://newb.tokyo/css/app.min.css" rel="stylesheet">
+  
+  <link rel="apple-touch-icon" href="../../img/apple-touch-icon.png">
+  <link rel="icon" href="../../img/favicon.ico">
+  
+  <meta name="generator" content="Hugo 0.104.3">
+  
+  <link rel="alternate" type="application/atom+xml" href="https://newb.tokyo/index.xml" title="newb.tokyo">
+</head>
+
+<body class="single">
+  <header class="header">
+    
+    <p class="title"><a href="https://newb.tokyo">newb.tokyo</a></p>
+    
+
+    <p class="menuList">
+    
+        <a href="../../">home</a>
+        <span class="separator">&frasl;</span>
+    
+        <a href="../../about/">about</a>
+        
+    
+    </p>
+  </header>
+  <main class="main ">
+
+<article class="post post-view">
+  <header class="post-header">
+    <h1 class="post-title">【Laravel】ネストしたリレーションをEager loadingするときにクエリを追加する</h1>
+    <p class="post-meta">2019.7.24</p>
+    
+    <ul class="post-tags">
+      
+      <li><a href="https://newb.tokyo/tags/it/">IT</a></li>
+      
+      <li><a href="https://newb.tokyo/tags/php/">PHP</a></li>
+      
+      <li><a href="https://newb.tokyo/tags/laravel/">Laravel</a></li>
+      
+    </ul>
+    
+  </header>
+  <div class="post-content"><p>Category,Title,Subtitle という3つのモデルを例にする。</p>
+<p><strong>Category</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Category</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Eloquent</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> $table <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;category&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">title</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">hasMany</span>(<span style="color:#e6db74">&#39;Title&#39;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Title</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Title</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Eloquent</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> $table <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;title&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">subtitle</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">hasMany</span>(<span style="color:#e6db74">&#39;Subtitle&#39;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Subtitle</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Subtitle</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Eloquent</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> $table <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;subtitle&#39;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="普通にeager-loadする">普通にEager loadする</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$result <span style="color:#f92672">=</span> <span style="color:#a6e22e">Category</span><span style="color:#f92672">::</span><span style="color:#a6e22e">with</span>(<span style="color:#e6db74">&#39;title.subtitle&#39;</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>();
+</span></span></code></pre></div><h2 id="title-に-where-を咬ませる">title に where を咬ませる</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$result <span style="color:#f92672">=</span> <span style="color:#a6e22e">Category</span><span style="color:#f92672">::</span><span style="color:#a6e22e">with</span>([<span style="color:#e6db74">&#39;title&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">function</span> ($query) {
+</span></span><span style="display:flex;"><span>    $query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">where</span>(<span style="color:#e6db74">&#39;title&#39;</span>, <span style="color:#e6db74">&#39;like&#39;</span>, <span style="color:#e6db74">&#39;%first%&#39;</span>);
+</span></span><span style="display:flex;"><span>}])<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>();
+</span></span></code></pre></div><p>Eager loadingにクエリを追加する場合はこのようにクロージャーを渡せば良い。</p>
+<h2 id="title-と-subtitle-の両方にクエリを咬ませたい">title と subtitle の両方にクエリを咬ませたい</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$result <span style="color:#f92672">=</span> <span style="color:#a6e22e">Category</span><span style="color:#f92672">::</span><span style="color:#a6e22e">with</span>([
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;title&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">function</span> ($query) {
+</span></span><span style="display:flex;"><span>        $query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">where</span>(<span style="color:#e6db74">&#39;title&#39;</span>, <span style="color:#e6db74">&#39;like&#39;</span>, <span style="color:#e6db74">&#39;%first%&#39;</span>);
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;title.subtitle&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">function</span> ($query) {
+</span></span><span style="display:flex;"><span>        $query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">where</span>(<span style="color:#e6db74">&#39;subtitle&#39;</span>, <span style="color:#e6db74">&#39;like&#39;</span>, <span style="color:#e6db74">&#39;%second%&#39;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>])<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>();
+</span></span></code></pre></div><p><code>subtitle</code> にクエリを追加する場合のキー値は <code>subtitle</code> ではなく <code>title.subtitle</code> とする必要がある。</p>
+</div>
+
+  
+  
+  
+  
+  <div class="shares">
+    <a href="https://twitter.com/share" class="twitter-share-button" data-via="umasoya" data-text="【Laravel】ネストしたリレーションをEager loadingするときにクエリを追加する | newb.tokyo" data-lang="ja">Tweet</a>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="basic-counter" title="このエントリーをはてなブックマークに追加">
+        <img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" />
+    </a>
+    <script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+</div>
+
+</article>
+</main>
+<footer class="footer">
+  <span>&copy; 2022 umasoya</span>
+</footer>
+
+<script src="https://newb.tokyojs/app.js"></script>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-108444633-2', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+</body>
+</html>
+
