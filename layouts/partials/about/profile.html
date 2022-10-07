@@ -1,37 +1,47 @@
 <article class="about" id="profile">
 
   <header class="about-header">
-    <div id="user_icon"><i class="fas fa-10x fa-user-circle"></i></div>
+    <div id="user_icon"><img src="/img/profile/profile.jpg" alt="profile"></div>
     <h1 id="user_name">umasoya</h1>
+    <!-- sns icons -->
+    <section class="about-icons">
+      <div class="icons">
+        <!-- Github -->
+        <a href="https://github.com/{{.Site.Params.github}}/" target="_brank">
+          <i class="fab fa-github"></i>
+        </a>
+        <!-- Twitter -->
+        <a href="https://twitter.com/{{.Site.Params.twitter}}" target="_brank">
+          <i class="fab fa-twitter"></i>
+        </a>
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/{{.Site.Params.instagram}}" target="_brank">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <!-- Linkedin -->
+        <a href="https://www.linkedin.com/in/{{.Site.Params.linkedin}}/" target="_brank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <!-- Facebook -->
+        <a href="https://facebook.com/umasoya0331" target="_brank">
+          <i class="fab fa-facebook"></i>
+        </a>
+      </div>
+    </section>
   </header>
 
-  <main>
+  <section>
     {{ .Content }}
-  </main>
+    <section class="about-grass">
+      <div>
+        <div class="grass-graph__wrapper">
+          <h1>Github Activities</h1>
+          <img src="https://grass-graph.appspot.com/images/umasoya.png">
+        </div>
+      </div>
+    </section>
+  </section>
 
-  <footer class="about-icons">
-    <div class="icons">
-      <!-- Github -->
-      <a href="https://github.com/{{.Site.Params.github}}/" target="_brank">
-        <i class="fab fa-github"></i>
-      </a>
-      <!-- Twitter -->
-      <a href="https://twitter.com/{{.Site.Params.twitter}}" target="_brank">
-        <i class="fab fa-twitter"></i>
-      </a>
-      <!-- Instagram -->
-      <a href="https://www.instagram.com/{{.Site.Params.instagram}}" target="_brank">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <!-- Linkedin -->
-      <a href="https://www.linkedin.com/in/{{.Site.Params.linkedin}}/" target="_brank">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <!-- Facebook -->
-      <a href="https://facebook.com/umasoya0331" target="_brank">
-        <i class="fab fa-facebook"></i>
-      </a>
-    </div>
-  </footer>
+  <!-- footer></footer -->
 
 </article>
