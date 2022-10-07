@@ -6,11 +6,7 @@
     <description>Recent content in hugo on newb.tokyo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <lastBuildDate>Tue, 29 Oct 2019 15:00:17 +0000</lastBuildDate>
-    
-	<atom:link href="https://newb.tokyo/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Tue, 29 Oct 2019 15:00:17 +0000</lastBuildDate><atom:link href="https://newb.tokyo/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>hugoをupdateしたらトップページがおかしくなったので直した話</title>
       <link>https://newb.tokyo/posts/hugo_update/</link>

@@ -20,7 +20,7 @@
   <link rel="apple-touch-icon" href="../../img/apple-touch-icon.png">
   <link rel="icon" href="../../img/favicon.ico">
   
-  <meta name="generator" content="Hugo 0.59.0">
+  <meta name="generator" content="Hugo 0.104.3">
   
   <link rel="alternate" type="application/atom+xml" href="https://newb.tokyo/index.xml" title="newb.tokyo">
 </head>
@@ -59,77 +59,55 @@
     </ul>
     
   </header>
-  <div class="post-content">
-
-<p>Category,Title,Subtitle という3つのモデルを例にする。</p>
-
+  <div class="post-content"><p>Category,Title,Subtitle という3つのモデルを例にする。</p>
 <p><strong>Category</strong></p>
-
-<pre><code class="language-php">&lt;?php
-
-class Category extends Eloquent
-{
-    protected $table = 'category';
-
-    public function title()
-    {
-        return $this-&gt;hasMany('Title');
-    }
-}
-</code></pre>
-
-<p><strong>Title</strong></p>
-
-<pre><code class="language-php">&lt;?php
-
-class Title extends Eloquent
-{
-    protected $table = 'title';
-
-    public function subtitle()
-    {
-        return $this-&gt;hasMany('Subtitle');
-    }
-}
-</code></pre>
-
-<p><strong>Subtitle</strong></p>
-
-<pre><code class="language-php">&lt;?php
-
-class Subtitle extends Eloquent
-{
-    protected $table = 'subtitle';
-}
-</code></pre>
-
-<h2 id="普通にeager-loadする">普通にEager loadする</h2>
-
-<pre><code class="language-php">$result = Category::with('title.subtitle')-&gt;get();
-</code></pre>
-
-<h2 id="title-に-where-を咬ませる">title に where を咬ませる</h2>
-
-<pre><code class="language-php">$result = Category::with(['title' =&gt; function ($query) {
-    $query-&gt;where('title', 'like', '%first%');
-}])-&gt;get();
-</code></pre>
-
-<p>Eager loadingにクエリを追加する場合はこのようにクロージャーを渡せば良い。</p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Category</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Eloquent</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> $table <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;category&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">title</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">hasMany</span>(<span style="color:#e6db74">&#39;Title&#39;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Title</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Title</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Eloquent</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> $table <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;title&#39;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">subtitle</span>()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> $this<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">hasMany</span>(<span style="color:#e6db74">&#39;Subtitle&#39;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>Subtitle</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span><span style="color:#f92672">&lt;?</span><span style="color:#a6e22e">php</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Subtitle</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Eloquent</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">protected</span> $table <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;subtitle&#39;</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="普通にeager-loadする">普通にEager loadする</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$result <span style="color:#f92672">=</span> <span style="color:#a6e22e">Category</span><span style="color:#f92672">::</span><span style="color:#a6e22e">with</span>(<span style="color:#e6db74">&#39;title.subtitle&#39;</span>)<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>();
+</span></span></code></pre></div><h2 id="title-に-where-を咬ませる">title に where を咬ませる</h2>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$result <span style="color:#f92672">=</span> <span style="color:#a6e22e">Category</span><span style="color:#f92672">::</span><span style="color:#a6e22e">with</span>([<span style="color:#e6db74">&#39;title&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">function</span> ($query) {
+</span></span><span style="display:flex;"><span>    $query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">where</span>(<span style="color:#e6db74">&#39;title&#39;</span>, <span style="color:#e6db74">&#39;like&#39;</span>, <span style="color:#e6db74">&#39;%first%&#39;</span>);
+</span></span><span style="display:flex;"><span>}])<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>();
+</span></span></code></pre></div><p>Eager loadingにクエリを追加する場合はこのようにクロージャーを渡せば良い。</p>
 <h2 id="title-と-subtitle-の両方にクエリを咬ませたい">title と subtitle の両方にクエリを咬ませたい</h2>
-
-<pre><code class="language-php">$result = Category::with([
-    'title' =&gt; function ($query) {
-        $query-&gt;where('title', 'like', '%first%');
-    },
-    'title.subtitle' =&gt; function ($query) {
-        $query-&gt;where('subtitle', 'like', '%second%');
-    }
-])-&gt;get();
-</code></pre>
-
-<p><code>subtitle</code> にクエリを追加する場合のキー値は <code>subtitle</code> ではなく <code>title.subtitle</code> とする必要がある。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-php" data-lang="php"><span style="display:flex;"><span>$result <span style="color:#f92672">=</span> <span style="color:#a6e22e">Category</span><span style="color:#f92672">::</span><span style="color:#a6e22e">with</span>([
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;title&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">function</span> ($query) {
+</span></span><span style="display:flex;"><span>        $query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">where</span>(<span style="color:#e6db74">&#39;title&#39;</span>, <span style="color:#e6db74">&#39;like&#39;</span>, <span style="color:#e6db74">&#39;%first%&#39;</span>);
+</span></span><span style="display:flex;"><span>    },
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#39;title.subtitle&#39;</span> <span style="color:#f92672">=&gt;</span> <span style="color:#66d9ef">function</span> ($query) {
+</span></span><span style="display:flex;"><span>        $query<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">where</span>(<span style="color:#e6db74">&#39;subtitle&#39;</span>, <span style="color:#e6db74">&#39;like&#39;</span>, <span style="color:#e6db74">&#39;%second%&#39;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>])<span style="color:#f92672">-&gt;</span><span style="color:#a6e22e">get</span>();
+</span></span></code></pre></div><p><code>subtitle</code> にクエリを追加する場合のキー値は <code>subtitle</code> ではなく <code>title.subtitle</code> とする必要がある。</p>
 </div>
 
   

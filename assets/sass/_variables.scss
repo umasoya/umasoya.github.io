@@ -4,8 +4,30 @@ $dark:       #516C8D;
 $blue:       #6A91C1;
 $light:      #CCCCCC;
 $light-gray: #F9F9F9;
+$border:     #c3c3c3;
+$box-shadow: $border;
 
 // Sizing
-$title-size: 50px;
+$title-size:    50px;
 $header-height: 65px;
 $footer-height: 65px;
+
+$border-radius: 3px;
+
+$profile-img-size:   300px;
+$profile-img-width:  $profile-img-size;
+$profile-img-height: $profile-img-size;
+
+// breakpoints
+$breakpoints: (
+    "sm": "screen and (max-width: 819px)",
+    "md": "screen and (min-width: 820px)",
+    "lg": "screen and (min-width: 1000px)",
+    "xl": "screen and (min-width: 1200px)",
+) !default;
+$sizes: (
+    "sm": "700px",
+    "md": "820px",
+    "lg": "1000px",
+    "xl": "1200px",
+) !default;

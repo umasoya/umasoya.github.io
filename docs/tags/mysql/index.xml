@@ -6,11 +6,7 @@
     <description>Recent content in MySQL on newb.tokyo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <lastBuildDate>Thu, 16 May 2019 07:23:37 +0000</lastBuildDate>
-    
-	<atom:link href="https://newb.tokyo/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 16 May 2019 07:23:37 +0000</lastBuildDate><atom:link href="https://newb.tokyo/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MySQLの設定を再起動せず変更する</title>
       <link>https://newb.tokyo/posts/update_conf_without_restart_mysql/</link>

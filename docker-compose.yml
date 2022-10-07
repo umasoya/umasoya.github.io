@@ -13,14 +13,15 @@ services:
         command: npm run serve
 
     hugo:
-        # build: ./docker/hugo
-        image: umasoya/hugo
+        build: ./docker/hugo
+          # image: umasoya/hugo
         volumes:
             - .:/newb.tokyo:rw
         working_dir: /newb.tokyo
         ports:
             - 1313:1313
             - 443:443
+        command: hugo server
         logging:
             options:
                 max-size: '100k'
