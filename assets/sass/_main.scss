@@ -1,7 +1,6 @@
 .menuList {
     margin-right: 50px;
     color: $dark;
-
     .separator {
         margin: auto 5px;
     }
@@ -9,18 +8,24 @@
 
 .page-header {
     margin: 0 auto 20px auto;
-
-    @media screen and (max-width: 700px) {
-        max-width: 700px;
-    }
-    @media  screen and (min-width: 701px) and (max-width: 819px) {
-        width: 700px;
-    }
-    @media screen and (min-width: 820px) {
-        width: 820px;
+    @each $size, $value in $sizes {
+        @include bp($size) {
+            width: #{$value};
+        }
     }
 }
 
 .flex {
     display: flex;
+}
+
+article.first-entry {
+    min-height: calc(#{$header-height} + 80px + 80px); // overwrite
+    .post-header, .post-summary, .post-footer, .post-link {
+        @each $size, $value in $sizes {
+            @include bp($size) {
+                min-width: #{$value};
+            }
+        }
+    }
 }
