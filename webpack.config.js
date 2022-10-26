@@ -1,10 +1,15 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 module.exports = {
+    devtool: "source-map",
     mode: 'development',
     watch: false,
-    entry: path.resolve(__dirname, "assets/js/app.ts"),
+    entry: [
+        path.resolve(__dirname, "assets/js/app.ts"),
+        path.resolve(__dirname, "assets/sass/app.scss"),
+    ],
     devServer: {
         static: path.resolve(__dirname, 'docs'),
         port: 9000,
@@ -18,8 +23,8 @@ module.exports = {
         extensions: ['.ts', '.js'],
     },
     output: {
-        path: path.resolve(__dirname, "docs/js"),
-        filename: 'app.js'
+        path: path.resolve(__dirname, "docs"),
+        filename: 'js/app.js'
     },
     module: {
         rules: [
@@ -49,6 +54,17 @@ module.exports = {
                     'sass-loader',
                 ]
             }
+        ]
+    },
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: 'css/app.min.css'
+        })
+    ],
+    optimization: {
+        minimize: true,
+        minimizer: [
+            new CssMinimizerPlugin(),
         ]
     }
 };
