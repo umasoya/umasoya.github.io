@@ -29,3 +29,7 @@ article.first-entry {
         }
     }
 }
+
+code[style="display: block"] {
+    box-shadow: 0px 0px 5px 10px $box-shadow;
+}

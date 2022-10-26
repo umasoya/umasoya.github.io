@@ -3,20 +3,20 @@ import "@fortawesome/fontawesome-free/js/all";
 import InstantClick = require("instantclick");
 import ScrollOut = require("scroll-out");
 
-import hljs = require("highlight.js/lib/highlight");
-import bash = require("highlight.js/lib/languages/bash");
+import hljs       = require("highlight.js/lib/highlight");
+import bash       = require("highlight.js/lib/languages/bash");
 import dockerfile = require("highlight.js/lib/languages/dockerfile");
-import go = require("highlight.js/lib/languages/go");
-import ini = require("highlight.js/lib/languages/ini");
+import go         = require("highlight.js/lib/languages/go");
+import ini        = require("highlight.js/lib/languages/ini");
 import javascript = require("highlight.js/lib/languages/javascript");
-import json = require("highlight.js/lib/languages/json");
-import makefile = require("highlight.js/lib/languages/makefile");
-import nginx = require("highlight.js/lib/languages/nginx");
-import php = require("highlight.js/lib/languages/php");
-import sql = require("highlight.js/lib/languages/sql");
-import vim = require("highlight.js/lib/languages/vim");
-import xml = require("highlight.js/lib/languages/xml");
-import yaml = require("highlight.js/lib/languages/yaml");
+import json       = require("highlight.js/lib/languages/json");
+import makefile   = require("highlight.js/lib/languages/makefile");
+import nginx      = require("highlight.js/lib/languages/nginx");
+import php        = require("highlight.js/lib/languages/php");
+import sql        = require("highlight.js/lib/languages/sql");
+import vim        = require("highlight.js/lib/languages/vim");
+import xml        = require("highlight.js/lib/languages/xml");
+import yaml       = require("highlight.js/lib/languages/yaml");
 
 /* eslint-enable */
 
@@ -53,7 +53,8 @@ hljs.highlightInline = () => {
       elm.style.display = "inline";
       elm.style.margin = "0 2px";
       elm.style.padding = "1px 3px";
-      elm.classList.add("hljs");
+      elm.classList.add("hljs", "inline-code");
+      // elm.style.boxShadow = "none";
     }
   }
 };
