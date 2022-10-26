@@ -41,7 +41,6 @@ module.exports = {
                 loader: 'ts-loader',
                 exclude: /node_modules/,
             },
-            /*
             {
                 test: /\.s[ac]ss$/i,
                 use: [
@@ -50,7 +49,6 @@ module.exports = {
                     'sass-loader',
                 ]
             }
-            */
         ]
     }
 };

@@ -54,7 +54,6 @@ hljs.highlightInline = () => {
       elm.style.margin = "0 2px";
       elm.style.padding = "1px 3px";
       elm.classList.add("hljs", "inline-code");
-      // elm.style.boxShadow = "none";
     }
   }
 };
