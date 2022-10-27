@@ -36,7 +36,7 @@ import "mermaid"
 ## 描画テスト
 
 ```html
-{{<mermaid>}}
+{{</*mermaid*/>}}
     graph TD;
       A-->B;
       A-->C;
