@@ -6,7 +6,16 @@
     <description>Recent content in IT on newb.tokyo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <lastBuildDate>Fri, 30 Sep 2022 09:59:27 +0000</lastBuildDate><atom:link href="https://newb.tokyo/tags/it/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Oct 2022 00:44:54 +0000</lastBuildDate><atom:link href="https://newb.tokyo/tags/it/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hugoでmermaidを使えるようにする</title>
+      <link>https://newb.tokyo/posts/20221028_include_mermaid/</link>
+      <pubDate>Fri, 28 Oct 2022 00:44:54 +0000</pubDate>
+      
+      <guid>https://newb.tokyo/posts/20221028_include_mermaid/</guid>
+      <description>Hugoにmermaidを組み込んでみた こちらの記事を参考に当ブログでも mermaid.js を使えるように設定する。 インストール yarn add -D mermaid @types/mermaid mermaid を読み込む 私はモジ</description>
+    </item>
+    
     <item>
       <title>放置していていたブログのメンテナンスをした話</title>
       <link>https://newb.tokyo/posts/20220930_update_tools_used_in_blog/</link>

@@ -12,6 +12,7 @@ declare module 'highlight.js/lib/languages/makefile';
 declare module 'highlight.js/lib/languages/nginx';
 declare module 'highlight.js/lib/languages/php';
 declare module 'highlight.js/lib/languages/sql';
+declare module 'highlight.js/lib/languages/typescript';
 declare module 'highlight.js/lib/languages/vim';
 declare module 'highlight.js/lib/languages/yaml';
 declare module 'highlight.js/lib/languages/xml';

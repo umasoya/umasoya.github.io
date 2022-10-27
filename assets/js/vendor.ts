@@ -3,6 +3,7 @@ import "@fortawesome/fontawesome-free/js/all";
 import InstantClick = require("instantclick");
 import ScrollOut = require("scroll-out");
 
+// highlight.js
 import hljs       = require("highlight.js/lib/highlight");
 import bash       = require("highlight.js/lib/languages/bash");
 import dockerfile = require("highlight.js/lib/languages/dockerfile");
@@ -14,9 +15,13 @@ import makefile   = require("highlight.js/lib/languages/makefile");
 import nginx      = require("highlight.js/lib/languages/nginx");
 import php        = require("highlight.js/lib/languages/php");
 import sql        = require("highlight.js/lib/languages/sql");
+import typescript = require("highlight.js/lib/languages/typescript");
 import vim        = require("highlight.js/lib/languages/vim");
 import xml        = require("highlight.js/lib/languages/xml");
 import yaml       = require("highlight.js/lib/languages/yaml");
+
+// mermaid
+import "mermaid";
 
 /* eslint-enable */
 
@@ -32,6 +37,7 @@ hljs.registerLanguage("makefile", makefile);
 hljs.registerLanguage("nginx", nginx);
 hljs.registerLanguage("php", php);
 hljs.registerLanguage("sql", sql);
+hljs.registerLanguage("ts", typescript);
 hljs.registerLanguage("vim", vim);
 hljs.registerLanguage("xml", xml);
 hljs.registerLanguage("yaml", yaml);

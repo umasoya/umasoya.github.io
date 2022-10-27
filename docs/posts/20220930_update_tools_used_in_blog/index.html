@@ -160,6 +160,11 @@
 </span></span></code></pre></div><p>無事にエラーは出なくなりました。</p>
 <h3 id="おわり">おわり</h3>
 <p>hugo もかなりバージョンアップが来ているようなので、近いうちにアップデートしようかなと考えています。</p>
+<h3 id="追記20221028">追記(2022/10/28)</h3>
+<p><code>highlight.js</code> が上手いこと動作していなかったので 11系にアップグレードしたところ、今度はbuildでコケるように…
+どうやら10系とは別の不具合があるようで、結局9系にダウングレードしました。</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>yarn upgrade highlight.js@^9.18.5
+</span></span></code></pre></div><p>またビルド自体も上手いことできていなかったようなので、 <a href="https://raw.githubusercontent.com/umasoya/newb.tokyo/master/webpack.config.js">webpack.config.js</a> を修正しました。</p>
 </div>
 
   
@@ -185,7 +190,7 @@
 <script src="https://newb.tokyo/js/app.js"></script>
 
 
-
+  
 <script type="application/javascript">
 var doNotTrack = false;
 if (!doNotTrack) {
