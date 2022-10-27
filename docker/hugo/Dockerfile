@@ -4,8 +4,9 @@ FROM golang:${golang_version}
 
 ARG hugo_version="v0.104.3"
 
-RUN apk --update --no-cache add --virtual .deps git gcc && \
+RUN apk --update --no-cache add --virtual .deps git gcc tzdata && \
     apk --no-cache add libc-dev g++ && \
+    cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
     git clone -b ${hugo_version} --depth 1 https://github.com/gohugoio/hugo.git /tmp/hugo
 
 WORKDIR /tmp/hugo
