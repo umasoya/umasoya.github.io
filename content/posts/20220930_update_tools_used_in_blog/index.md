@@ -127,3 +127,14 @@ package.json に下記を追加してバージョンを固定
 ### おわり
 
 hugo もかなりバージョンアップが来ているようなので、近いうちにアップデートしようかなと考えています。
+
+### 追記(2022/10/28)
+
+`highlight.js` が上手いこと動作していなかったので 11系にアップグレードしたところ、今度はbuildでコケるように…
+どうやら10系とは別の不具合があるようで、結局9系にダウングレードしました。
+
+```sh
+yarn upgrade highlight.js@^9.18.5
+```
+
+またビルド自体も上手いことできていなかったようなので、 [webpack.config.js](https://raw.githubusercontent.com/umasoya/newb.tokyo/master/webpack.config.js) を修正しました。
