@@ -21,7 +21,8 @@ import xml        = require("highlight.js/lib/languages/xml");
 import yaml       = require("highlight.js/lib/languages/yaml");
 
 // mermaid
-import "mermaid";
+import mermaid from "mermaid";
+mermaid.initialize({startOnLoad:true});
 
 /* eslint-enable */
 
