@@ -36,16 +36,16 @@ import "mermaid"
 ## 描画テスト
 
 ```html
-{{</*mermaid*/>}}
+{{</*mermaid title="test"*/>}}
     graph TD;
       A-->B;
       A-->C;
       B-->D;
       C-->D;
-{{</mermaid>}}
+{{</*/mermaid*/>}}
 ```
 
-{{<mermaid>}}
+{{<mermaid title="test">}}
     graph TD;
       A-->B;
       A-->C;

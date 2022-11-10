@@ -22,7 +22,9 @@ import yaml       = require("highlight.js/lib/languages/yaml");
 
 // mermaid
 import mermaid from "mermaid";
-mermaid.initialize({startOnLoad:true});
+(async () => {
+  mermaid.initialize({startOnLoad:true});
+})();
 
 /* eslint-enable */
 
