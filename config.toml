@@ -6,7 +6,6 @@ canonifyurls = true
 publishDir = "docs"
 staticDir = "static"
 hasCJKLanguage = true
-googleAnalytics = "UA-108444633-2"
 relativeUrls = true
 
 [params]

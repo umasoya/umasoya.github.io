@@ -1,3 +1,6 @@
-<div class="mermaid" align="{{ if .Get "align" }}{{ .Get "align" }}{{ else }}center{{ end }}">
-    {{ safeHTML .Inner }}
-</div>
+<figure style="text-align: {{ if .Get "align" }}{{ .Get "align" }}{{ else }}center{{ end }}">
+    <div class="mermaid">
+        {{ safeHTML .Inner }}
+    </div>
+    {{- with .Get "title" }}<figcaption>図: {{ . }}</figcaption>{{ end }}
+</figure>
