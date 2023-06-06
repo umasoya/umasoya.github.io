@@ -3,23 +3,6 @@ import "@fortawesome/fontawesome-free/js/all";
 import InstantClick = require("instantclick");
 import ScrollOut = require("scroll-out");
 
-// highlight.js
-import hljs       = require("highlight.js/lib/highlight");
-import bash       = require("highlight.js/lib/languages/bash");
-import dockerfile = require("highlight.js/lib/languages/dockerfile");
-import go         = require("highlight.js/lib/languages/go");
-import ini        = require("highlight.js/lib/languages/ini");
-import javascript = require("highlight.js/lib/languages/javascript");
-import json       = require("highlight.js/lib/languages/json");
-import makefile   = require("highlight.js/lib/languages/makefile");
-import nginx      = require("highlight.js/lib/languages/nginx");
-import php        = require("highlight.js/lib/languages/php");
-import sql        = require("highlight.js/lib/languages/sql");
-import typescript = require("highlight.js/lib/languages/typescript");
-import vim        = require("highlight.js/lib/languages/vim");
-import xml        = require("highlight.js/lib/languages/xml");
-import yaml       = require("highlight.js/lib/languages/yaml");
-
 // mermaid
 import mermaid from "mermaid";
 (async () => {
@@ -29,20 +12,35 @@ import mermaid from "mermaid";
 /* eslint-enable */
 
 /* {{{1 highlight.js */
-
+import hljs       = require("highlight.js/lib/highlight");
+import bash       = require("highlight.js/lib/languages/bash");
 hljs.registerLanguage("sh", bash);
+import dockerfile = require("highlight.js/lib/languages/dockerfile");
 hljs.registerLanguage("dockerfile", dockerfile);
+import go         = require("highlight.js/lib/languages/go");
 hljs.registerLanguage("go", go);
+import ini        = require("highlight.js/lib/languages/ini");
 hljs.registerLanguage("ini", ini);
+import javascript = require("highlight.js/lib/languages/javascript");
 hljs.registerLanguage("js", javascript);
+import json       = require("highlight.js/lib/languages/json");
 hljs.registerLanguage("json", json);
+import makefile   = require("highlight.js/lib/languages/makefile");
 hljs.registerLanguage("makefile", makefile);
+import nginx      = require("highlight.js/lib/languages/nginx");
 hljs.registerLanguage("nginx", nginx);
+import php        = require("highlight.js/lib/languages/php");
 hljs.registerLanguage("php", php);
+import sql        = require("highlight.js/lib/languages/sql");
 hljs.registerLanguage("sql", sql);
-hljs.registerLanguage("ts", typescript);
+// typescript is not working.
+// import typescript = require("highlight.js/lib/languages/typescript");
+// hljs.registerLanguage("typescript", typescript);
+import vim        = require("highlight.js/lib/languages/vim");
 hljs.registerLanguage("vim", vim);
+import xml        = require("highlight.js/lib/languages/xml");
 hljs.registerLanguage("xml", xml);
+import yaml       = require("highlight.js/lib/languages/yaml");
 hljs.registerLanguage("yaml", yaml);
 
 /**

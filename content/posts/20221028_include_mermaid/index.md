@@ -19,7 +19,7 @@ yarn add -D mermaid @types/mermaid
 
 私はモジュール類のインポートや設定を `assets/js/vendor.ts` にまとめているので、このファイルに下記を追記する。
 
-```ts
+```js
 import "mermaid"
 ```
 

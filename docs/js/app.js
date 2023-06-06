@@ -8194,220 +8194,6 @@ module.exports = function(hljs) {
 
 /***/ }),
 
-/***/ "./node_modules/highlight.js/lib/languages/typescript.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/highlight.js/lib/languages/typescript.js ***!
-  \***************************************************************/
-/***/ ((module) => {
-
-module.exports = function(hljs) {
-  var JS_IDENT_RE = '[A-Za-z$_][0-9A-Za-z$_]*';
-  var KEYWORDS = {
-    keyword:
-      'in if for while finally var new function do return void else break catch ' +
-      'instanceof with throw case default try this switch continue typeof delete ' +
-      'let yield const class public private protected get set super ' +
-      'static implements enum export import declare type namespace abstract ' +
-      'as from extends async await',
-    literal:
-      'true false null undefined NaN Infinity',
-    built_in:
-      'eval isFinite isNaN parseFloat parseInt decodeURI decodeURIComponent ' +
-      'encodeURI encodeURIComponent escape unescape Object Function Boolean Error ' +
-      'EvalError InternalError RangeError ReferenceError StopIteration SyntaxError ' +
-      'TypeError URIError Number Math Date String RegExp Array Float32Array ' +
-      'Float64Array Int16Array Int32Array Int8Array Uint16Array Uint32Array ' +
-      'Uint8Array Uint8ClampedArray ArrayBuffer DataView JSON Intl arguments require ' +
-      'module console window document any number boolean string void Promise'
-  };
-
-  var DECORATOR = {
-    className: 'meta',
-    begin: '@' + JS_IDENT_RE,
-  };
-
-  var ARGS =
-  {
-    begin: '\\(',
-    end: /\)/,
-    keywords: KEYWORDS,
-    contains: [
-      'self',
-      hljs.QUOTE_STRING_MODE,
-      hljs.APOS_STRING_MODE,
-      hljs.NUMBER_MODE
-    ]
-  };
-
-  var PARAMS = {
-    className: 'params',
-    begin: /\(/, end: /\)/,
-    excludeBegin: true,
-    excludeEnd: true,
-    keywords: KEYWORDS,
-    contains: [
-      hljs.C_LINE_COMMENT_MODE,
-      hljs.C_BLOCK_COMMENT_MODE,
-      DECORATOR,
-      ARGS
-    ]
-  };
-  var NUMBER = {
-    className: 'number',
-    variants: [
-      { begin: '\\b(0[bB][01]+)n?' },
-      { begin: '\\b(0[oO][0-7]+)n?' },
-      { begin: hljs.C_NUMBER_RE + 'n?' }
-    ],
-    relevance: 0
-  };
-  var SUBST = {
-    className: 'subst',
-    begin: '\\$\\{', end: '\\}',
-    keywords: KEYWORDS,
-    contains: []  // defined later
-  };
-  var HTML_TEMPLATE = {
-    begin: 'html`', end: '',
-    starts: {
-      end: '`', returnEnd: false,
-      contains: [
-        hljs.BACKSLASH_ESCAPE,
-        SUBST
-      ],
-      subLanguage: 'xml',
-    }
-  };
-  var CSS_TEMPLATE = {
-    begin: 'css`', end: '',
-    starts: {
-      end: '`', returnEnd: false,
-      contains: [
-        hljs.BACKSLASH_ESCAPE,
-        SUBST
-      ],
-      subLanguage: 'css',
-    }
-  };
-  var TEMPLATE_STRING = {
-    className: 'string',
-    begin: '`', end: '`',
-    contains: [
-      hljs.BACKSLASH_ESCAPE,
-      SUBST
-    ]
-  };
-  SUBST.contains = [
-    hljs.APOS_STRING_MODE,
-    hljs.QUOTE_STRING_MODE,
-    HTML_TEMPLATE,
-    CSS_TEMPLATE,
-    TEMPLATE_STRING,
-    NUMBER,
-    hljs.REGEXP_MODE
-  ];
-
-
-
-  return {
-    aliases: ['ts'],
-    keywords: KEYWORDS,
-    contains: [
-      {
-        className: 'meta',
-        begin: /^\s*['"]use strict['"]/
-      },
-      hljs.APOS_STRING_MODE,
-      hljs.QUOTE_STRING_MODE,
-      HTML_TEMPLATE,
-      CSS_TEMPLATE,
-      TEMPLATE_STRING,
-      hljs.C_LINE_COMMENT_MODE,
-      hljs.C_BLOCK_COMMENT_MODE,
-      NUMBER,
-      { // "value" container
-        begin: '(' + hljs.RE_STARTERS_RE + '|\\b(case|return|throw)\\b)\\s*',
-        keywords: 'return throw case',
-        contains: [
-          hljs.C_LINE_COMMENT_MODE,
-          hljs.C_BLOCK_COMMENT_MODE,
-          hljs.REGEXP_MODE,
-          {
-            className: 'function',
-            begin: '(\\(.*?\\)|' + hljs.IDENT_RE + ')\\s*=>', returnBegin: true,
-            end: '\\s*=>',
-            contains: [
-              {
-                className: 'params',
-                variants: [
-                  {
-                    begin: hljs.IDENT_RE
-                  },
-                  {
-                    begin: /\(\s*\)/,
-                  },
-                  {
-                    begin: /\(/, end: /\)/,
-                    excludeBegin: true, excludeEnd: true,
-                    keywords: KEYWORDS,
-                    contains: [
-                      'self',
-                      hljs.C_LINE_COMMENT_MODE,
-                      hljs.C_BLOCK_COMMENT_MODE
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ],
-        relevance: 0
-      },
-      {
-        className: 'function',
-        beginKeywords: 'function', end: /[\{;]/, excludeEnd: true,
-        keywords: KEYWORDS,
-        contains: [
-          'self',
-          hljs.inherit(hljs.TITLE_MODE, { begin: JS_IDENT_RE }),
-          PARAMS
-        ],
-        illegal: /%/,
-        relevance: 0 // () => {} is more typical in TypeScript
-      },
-      {
-        beginKeywords: 'constructor', end: /[\{;]/, excludeEnd: true,
-        contains: [
-          'self',
-          PARAMS
-        ]
-      },
-      { // prevent references like module.id from being higlighted as module definitions
-        begin: /module\./,
-        keywords: { built_in: 'module' },
-        relevance: 0
-      },
-      {
-        beginKeywords: 'module', end: /\{/, excludeEnd: true
-      },
-      {
-        beginKeywords: 'interface', end: /\{/, excludeEnd: true,
-        keywords: 'interface extends'
-      },
-      {
-        begin: /\$[(.]/ // relevance booster for a pattern common to JS libs: `$(something)` and `$.something`
-      },
-      {
-        begin: '\\.' + hljs.IDENT_RE, relevance: 0 // hack: prevents detection of keywords after dots
-      },
-      DECORATOR,
-      ARGS
-    ]
-  };
-};
-
-/***/ }),
-
 /***/ "./node_modules/highlight.js/lib/languages/vim.js":
 /*!********************************************************!*\
   !*** ./node_modules/highlight.js/lib/languages/vim.js ***!
@@ -9106,42 +8892,6 @@ module.exports = main;
 
 "use strict";
 
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (_) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
-    }
-};
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -9150,45 +8900,42 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 __webpack_require__(/*! @fortawesome/fontawesome-free/js/all */ "./node_modules/@fortawesome/fontawesome-free/js/all.js");
 var InstantClick = __webpack_require__(/*! instantclick */ "./node_modules/instantclick/instantclick.js");
 var ScrollOut = __webpack_require__(/*! scroll-out */ "./node_modules/scroll-out/lib/index.js");
-// highlight.js
-var hljs = __webpack_require__(/*! highlight.js/lib/highlight */ "./node_modules/highlight.js/lib/highlight.js");
-var bash = __webpack_require__(/*! highlight.js/lib/languages/bash */ "./node_modules/highlight.js/lib/languages/bash.js");
-var dockerfile = __webpack_require__(/*! highlight.js/lib/languages/dockerfile */ "./node_modules/highlight.js/lib/languages/dockerfile.js");
-var go = __webpack_require__(/*! highlight.js/lib/languages/go */ "./node_modules/highlight.js/lib/languages/go.js");
-var ini = __webpack_require__(/*! highlight.js/lib/languages/ini */ "./node_modules/highlight.js/lib/languages/ini.js");
-var javascript = __webpack_require__(/*! highlight.js/lib/languages/javascript */ "./node_modules/highlight.js/lib/languages/javascript.js");
-var json = __webpack_require__(/*! highlight.js/lib/languages/json */ "./node_modules/highlight.js/lib/languages/json.js");
-var makefile = __webpack_require__(/*! highlight.js/lib/languages/makefile */ "./node_modules/highlight.js/lib/languages/makefile.js");
-var nginx = __webpack_require__(/*! highlight.js/lib/languages/nginx */ "./node_modules/highlight.js/lib/languages/nginx.js");
-var php = __webpack_require__(/*! highlight.js/lib/languages/php */ "./node_modules/highlight.js/lib/languages/php.js");
-var sql = __webpack_require__(/*! highlight.js/lib/languages/sql */ "./node_modules/highlight.js/lib/languages/sql.js");
-var typescript = __webpack_require__(/*! highlight.js/lib/languages/typescript */ "./node_modules/highlight.js/lib/languages/typescript.js");
-var vim = __webpack_require__(/*! highlight.js/lib/languages/vim */ "./node_modules/highlight.js/lib/languages/vim.js");
-var xml = __webpack_require__(/*! highlight.js/lib/languages/xml */ "./node_modules/highlight.js/lib/languages/xml.js");
-var yaml = __webpack_require__(/*! highlight.js/lib/languages/yaml */ "./node_modules/highlight.js/lib/languages/yaml.js");
 // mermaid
 var mermaid_1 = __importDefault(__webpack_require__(/*! mermaid */ "./node_modules/mermaid/dist/mermaid.min.js"));
-(function () { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        mermaid_1.default.initialize({ startOnLoad: true });
-        return [2 /*return*/];
-    });
-}); })();
+(function () {
+    mermaid_1.default.initialize({ startOnLoad: true });
+})();
 /* eslint-enable */
 /* {{{1 highlight.js */
+var hljs = __webpack_require__(/*! highlight.js/lib/highlight */ "./node_modules/highlight.js/lib/highlight.js");
+var bash = __webpack_require__(/*! highlight.js/lib/languages/bash */ "./node_modules/highlight.js/lib/languages/bash.js");
 hljs.registerLanguage("sh", bash);
+var dockerfile = __webpack_require__(/*! highlight.js/lib/languages/dockerfile */ "./node_modules/highlight.js/lib/languages/dockerfile.js");
 hljs.registerLanguage("dockerfile", dockerfile);
+var go = __webpack_require__(/*! highlight.js/lib/languages/go */ "./node_modules/highlight.js/lib/languages/go.js");
 hljs.registerLanguage("go", go);
+var ini = __webpack_require__(/*! highlight.js/lib/languages/ini */ "./node_modules/highlight.js/lib/languages/ini.js");
 hljs.registerLanguage("ini", ini);
+var javascript = __webpack_require__(/*! highlight.js/lib/languages/javascript */ "./node_modules/highlight.js/lib/languages/javascript.js");
 hljs.registerLanguage("js", javascript);
+var json = __webpack_require__(/*! highlight.js/lib/languages/json */ "./node_modules/highlight.js/lib/languages/json.js");
 hljs.registerLanguage("json", json);
+var makefile = __webpack_require__(/*! highlight.js/lib/languages/makefile */ "./node_modules/highlight.js/lib/languages/makefile.js");
 hljs.registerLanguage("makefile", makefile);
+var nginx = __webpack_require__(/*! highlight.js/lib/languages/nginx */ "./node_modules/highlight.js/lib/languages/nginx.js");
 hljs.registerLanguage("nginx", nginx);
+var php = __webpack_require__(/*! highlight.js/lib/languages/php */ "./node_modules/highlight.js/lib/languages/php.js");
 hljs.registerLanguage("php", php);
+var sql = __webpack_require__(/*! highlight.js/lib/languages/sql */ "./node_modules/highlight.js/lib/languages/sql.js");
 hljs.registerLanguage("sql", sql);
-hljs.registerLanguage("ts", typescript);
+// typescript is not working.
+// import typescript = require("highlight.js/lib/languages/typescript");
+// hljs.registerLanguage("typescript", typescript);
+var vim = __webpack_require__(/*! highlight.js/lib/languages/vim */ "./node_modules/highlight.js/lib/languages/vim.js");
 hljs.registerLanguage("vim", vim);
+var xml = __webpack_require__(/*! highlight.js/lib/languages/xml */ "./node_modules/highlight.js/lib/languages/xml.js");
 hljs.registerLanguage("xml", xml);
+var yaml = __webpack_require__(/*! highlight.js/lib/languages/yaml */ "./node_modules/highlight.js/lib/languages/yaml.js");
 hljs.registerLanguage("yaml", yaml);
 /**
  * Applies highlighting to a DOM node containing inline code.
