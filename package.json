@@ -7,7 +7,7 @@
     "@types/node": "^18.11.6",
     "@typescript-eslint/eslint-plugin": "^5.41.0",
     "@typescript-eslint/parser": "^5.41.0",
-    "browser-sync": "^2.26.7",
+    "browser-sync": "^2.29.3",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^4.2.2",
     "dom": "0.0.3",
