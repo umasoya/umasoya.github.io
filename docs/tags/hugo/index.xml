@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>hugo on newb.tokyo</title>
-    <link>https://newb.tokyo/tags/hugo/</link>
+    <link>https://umasoya.github.io/tags/hugo/</link>
     <description>Recent content in hugo on newb.tokyo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <lastBuildDate>Tue, 29 Oct 2019 15:00:17 +0000</lastBuildDate><atom:link href="https://newb.tokyo/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 29 Oct 2019 15:00:17 +0000</lastBuildDate><atom:link href="https://umasoya.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>hugoをupdateしたらトップページがおかしくなったので直した話</title>
-      <link>https://newb.tokyo/posts/20191029_hugo_update/</link>
+      <link>https://umasoya.github.io/posts/20191029_hugo_update/</link>
       <pubDate>Tue, 29 Oct 2019 15:00:17 +0000</pubDate>
       
-      <guid>https://newb.tokyo/posts/20191029_hugo_update/</guid>
+      <guid>https://umasoya.github.io/posts/20191029_hugo_update/</guid>
       <description>hugo を 0.55.5 -&amp;gt; 0.59.0 にupdateしたところ、 / や /tags/ などのリスト形式のページの表示がおかしくなっていた。 原因は 0.57.0 で .Pages に publishDir/ 以下のすべてのページが含まれる</description>
     </item>
     

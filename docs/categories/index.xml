@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on newb.tokyo</title>
-    <link>https://newb.tokyo/categories/</link>
+    <link>https://umasoya.github.io/categories/</link>
     <description>Recent content in Categories on newb.tokyo</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ja-JP</language><atom:link href="https://newb.tokyo/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>ja-JP</language><atom:link href="https://umasoya.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

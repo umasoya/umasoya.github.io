@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>PHP on newb.tokyo</title>
-    <link>https://newb.tokyo/tags/php/</link>
+    <link>https://umasoya.github.io/tags/php/</link>
     <description>Recent content in PHP on newb.tokyo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <lastBuildDate>Wed, 24 Jul 2019 06:34:31 +0000</lastBuildDate><atom:link href="https://newb.tokyo/tags/php/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Jul 2019 06:34:31 +0000</lastBuildDate><atom:link href="https://umasoya.github.io/tags/php/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>【Laravel】ネストしたリレーションをEager loadingするときにクエリを追加する</title>
-      <link>https://newb.tokyo/posts/20190724_nested_relation/</link>
+      <link>https://umasoya.github.io/posts/20190724_nested_relation/</link>
       <pubDate>Wed, 24 Jul 2019 06:34:31 +0000</pubDate>
       
-      <guid>https://newb.tokyo/posts/20190724_nested_relation/</guid>
+      <guid>https://umasoya.github.io/posts/20190724_nested_relation/</guid>
       <description>Category,Title,Subtitle という3つのモデルを例にする。 Category &amp;lt;?php class Category extends Eloquent { protected $table = &amp;#39;category&amp;#39;; public function title() { return $this-&amp;gt;hasMany(&amp;#39;Title&amp;#39;); } } Title &amp;lt;?php class Title extends Eloquent { protected $table = &amp;#39;title&amp;#39;; public function subtitle() { return $this-&amp;gt;hasMany(&amp;#39;Subtitle&amp;#39;); } } Subtitle &amp;lt;?php class Subtitle extends Eloquent { protected $table = &amp;#39;subtitle&amp;#39;; } 普通にE</description>
     </item>
     

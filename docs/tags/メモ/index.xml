@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>メモ on newb.tokyo</title>
-    <link>https://newb.tokyo/tags/%E3%83%A1%E3%83%A2/</link>
+    <link>https://umasoya.github.io/tags/%E3%83%A1%E3%83%A2/</link>
     <description>Recent content in メモ on newb.tokyo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <lastBuildDate>Thu, 16 May 2019 07:23:37 +0000</lastBuildDate><atom:link href="https://newb.tokyo/tags/%E3%83%A1%E3%83%A2/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 May 2019 07:23:37 +0000</lastBuildDate><atom:link href="https://umasoya.github.io/tags/%E3%83%A1%E3%83%A2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MySQLの設定を再起動せず変更する</title>
-      <link>https://newb.tokyo/posts/20190516_update_conf_without_restart_mysql/</link>
+      <link>https://umasoya.github.io/posts/20190516_update_conf_without_restart_mysql/</link>
       <pubDate>Thu, 16 May 2019 07:23:37 +0000</pubDate>
       
-      <guid>https://newb.tokyo/posts/20190516_update_conf_without_restart_mysql/</guid>
+      <guid>https://umasoya.github.io/posts/20190516_update_conf_without_restart_mysql/</guid>
       <description>SET GLOBAL 変数名=値 or SET @@global.変数名=値 これだけだと再起動したときに設定が消えてしまうので、必ず my.cnf も変更しておく。</description>
     </item>
     

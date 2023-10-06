@@ -15,20 +15,20 @@
   <link href="../../css/style.css" rel="stylesheet" type="text/css">
   
   
-  <link href="https://newb.tokyo/css/app.min.css" rel="stylesheet">
+  <link href="https://umasoya.github.io/css/app.min.css" rel="stylesheet">
   
   <link rel="apple-touch-icon" href="../../img/apple-touch-icon.png">
   <link rel="icon" href="../../img/favicon.ico">
   
-  <meta name="generator" content="Hugo 0.104.3">
+  <meta name="generator" content="Hugo 0.119.0">
   
-  <link rel="alternate" type="application/atom+xml" href="https://newb.tokyo/index.xml" title="newb.tokyo">
+  <link rel="alternate" type="application/atom+xml" href="https://umasoya.github.io/index.xml" title="newb.tokyo">
 </head>
 
 <body class="single">
   <header class="header">
     
-    <p class="title"><a href="https://newb.tokyo/">newb.tokyo</a></p>
+    <p class="title"><a href="https://umasoya.github.io/">newb.tokyo</a></p>
     
 
     <p class="menuList">
@@ -50,11 +50,11 @@
     
     <ul class="post-tags">
       
-      <li><a href="https://newb.tokyo/tags/it/">IT</a></li>
+      <li><a href="https://umasoya.github.io/tags/it/">IT</a></li>
       
-      <li><a href="https://newb.tokyo/tags/node.js/">node.js</a></li>
+      <li><a href="https://umasoya.github.io/tags/node.js/">node.js</a></li>
       
-      <li><a href="https://newb.tokyo/tags/frontend/">frontend</a></li>
+      <li><a href="https://umasoya.github.io/tags/frontend/">frontend</a></li>
       
     </ul>
     
@@ -67,31 +67,31 @@
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>yarn add -D mermaid @types/mermaid
 </span></span></code></pre></div><h2 id="mermaid-を読み込む">mermaid を読み込む</h2>
 <p>私はモジュール類のインポートや設定を <code>assets/js/vendor.ts</code> にまとめているので、このファイルに下記を追記する。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-ts" data-lang="ts"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;mermaid&#34;</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#66d9ef">import</span> <span style="color:#e6db74">&#34;mermaid&#34;</span>
 </span></span></code></pre></div><h2 id="mermaidjs用のショートコードを作成">mermaid.js用のショートコードを作成</h2>
 <p><code>layouts/shortcodes</code> に <code>mermaid.html</code> を作成する。</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>&lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">class</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;mermaid&#34;</span> <span style="color:#a6e22e">align</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;{{ if .Get &#39;align&#39; }}{{ .Get &#39;align&#39; }}{{ else }}center{{ end }}&#34;</span>&gt;
 </span></span><span style="display:flex;"><span>    {{ safeHTML .Inner }}
 </span></span><span style="display:flex;"><span>&lt;/<span style="color:#f92672">div</span>&gt;
 </span></span></code></pre></div><h2 id="描画テスト">描画テスト</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span><div class="mermaid" align="center">
-    
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-html" data-lang="html"><span style="display:flex;"><span>{{&lt;<span style="color:#f92672">mermaid</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;test&#34;</span>&gt;}}
+</span></span><span style="display:flex;"><span>    graph TD;
+</span></span><span style="display:flex;"><span>      A--&gt;B;
+</span></span><span style="display:flex;"><span>      A--&gt;C;
+</span></span><span style="display:flex;"><span>      B--&gt;D;
+</span></span><span style="display:flex;"><span>      C--&gt;D;
+</span></span><span style="display:flex;"><span>{{&lt;/<span style="color:#f92672">mermaid</span>&gt;}}
+</span></span></code></pre></div><figure style="text-align: center">
+    <div class="mermaid">
+        
     graph TD;
       A-->B;
       A-->C;
       B-->D;
       C-->D;
 
-</div>
-</span></span></code></pre></div><div class="mermaid" align="center">
-    
-    graph TD;
-      A-->B;
-      A-->C;
-      B-->D;
-      C-->D;
-
-</div>
+    </div><figcaption>図: test</figcaption>
+</figure>
 </div>
 
   
@@ -111,25 +111,10 @@
 </article>
 </main>
 <footer class="footer">
-  <span>&copy; 2022 umasoya</span>
+  <span>&copy; 2023 umasoya</span>
 </footer>
 
-<script src="https://newb.tokyo/js/app.js"></script>
-
-
-  
-<script type="application/javascript">
-var doNotTrack = false;
-if (!doNotTrack) {
-	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-	ga('create', 'UA-108444633-2', 'auto');
-	
-	ga('send', 'pageview');
-}
-</script>
-<script async src='https://www.google-analytics.com/analytics.js'></script>
-
-
+<script src="https://umasoya.github.io/js/app.js"></script>
 </body>
 </html>
 

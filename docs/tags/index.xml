@@ -2,161 +2,161 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on newb.tokyo</title>
-    <link>https://newb.tokyo/tags/</link>
+    <link>https://umasoya.github.io/tags/</link>
     <description>Recent content in Tags on newb.tokyo</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-JP</language>
-    <lastBuildDate>Fri, 28 Oct 2022 00:44:54 +0000</lastBuildDate><atom:link href="https://newb.tokyo/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 28 Oct 2022 00:44:54 +0000</lastBuildDate><atom:link href="https://umasoya.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>frontend</title>
-      <link>https://newb.tokyo/tags/frontend/</link>
+      <link>https://umasoya.github.io/tags/frontend/</link>
       <pubDate>Fri, 28 Oct 2022 00:44:54 +0000</pubDate>
       
-      <guid>https://newb.tokyo/tags/frontend/</guid>
+      <guid>https://umasoya.github.io/tags/frontend/</guid>
       <description></description>
     </item>
     
     <item>
       <title>IT</title>
-      <link>https://newb.tokyo/tags/it/</link>
+      <link>https://umasoya.github.io/tags/it/</link>
       <pubDate>Fri, 28 Oct 2022 00:44:54 +0000</pubDate>
       
-      <guid>https://newb.tokyo/tags/it/</guid>
+      <guid>https://umasoya.github.io/tags/it/</guid>
       <description></description>
     </item>
     
     <item>
       <title>node.js</title>
-      <link>https://newb.tokyo/tags/node.js/</link>
+      <link>https://umasoya.github.io/tags/node.js/</link>
       <pubDate>Fri, 28 Oct 2022 00:44:54 +0000</pubDate>
       
-      <guid>https://newb.tokyo/tags/node.js/</guid>
+      <guid>https://umasoya.github.io/tags/node.js/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Golang</title>
-      <link>https://newb.tokyo/tags/golang/</link>
+      <link>https://umasoya.github.io/tags/golang/</link>
       <pubDate>Tue, 29 Oct 2019 15:00:17 +0000</pubDate>
       
-      <guid>https://newb.tokyo/tags/golang/</guid>
+      <guid>https://umasoya.github.io/tags/golang/</guid>
       <description></description>
     </item>
     
     <item>
       <title>hugo</title>
-      <link>https://newb.tokyo/tags/hugo/</link>
+      <link>https://umasoya.github.io/tags/hugo/</link>
       <pubDate>Tue, 29 Oct 2019 15:00:17 +0000</pubDate>
       
-      <guid>https://newb.tokyo/tags/hugo/</guid>
+      <guid>https://umasoya.github.io/tags/hugo/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Laravel</title>
-      <link>https://newb.tokyo/tags/laravel/</link>
+      <link>https://umasoya.github.io/tags/laravel/</link>
       <pubDate>Wed, 24 Jul 2019 06:34:31 +0000</pubDate>
       
-      <guid>https://newb.tokyo/tags/laravel/</guid>
+      <guid>https://umasoya.github.io/tags/laravel/</guid>
       <description></description>
     </item>
     
     <item>
       <title>PHP</title>
-      <link>https://newb.tokyo/tags/php/</link>
+      <link>https://umasoya.github.io/tags/php/</link>
       <pubDate>Wed, 24 Jul 2019 06:34:31 +0000</pubDate>
       
-      <guid>https://newb.tokyo/tags/php/</guid>
+      <guid>https://umasoya.github.io/tags/php/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MySQL</title>
-      <link>https://newb.tokyo/tags/mysql/</link>
+      <link>https://umasoya.github.io/tags/mysql/</link>
       <pubDate>Thu, 16 May 2019 07:23:37 +0000</pubDate>
       
-      <guid>https://newb.tokyo/tags/mysql/</guid>
+      <guid>https://umasoya.github.io/tags/mysql/</guid>
       <description></description>
     </item>
     
     <item>
       <title>メモ</title>
-      <link>https://newb.tokyo/tags/%E3%83%A1%E3%83%A2/</link>
+      <link>https://umasoya.github.io/tags/%E3%83%A1%E3%83%A2/</link>
       <pubDate>Thu, 16 May 2019 07:23:37 +0000</pubDate>
       
-      <guid>https://newb.tokyo/tags/%E3%83%A1%E3%83%A2/</guid>
+      <guid>https://umasoya.github.io/tags/%E3%83%A1%E3%83%A2/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Chromebook</title>
-      <link>https://newb.tokyo/tags/chromebook/</link>
+      <link>https://umasoya.github.io/tags/chromebook/</link>
       <pubDate>Thu, 14 Feb 2019 14:32:11 +0000</pubDate>
       
-      <guid>https://newb.tokyo/tags/chromebook/</guid>
+      <guid>https://umasoya.github.io/tags/chromebook/</guid>
       <description></description>
     </item>
     
     <item>
       <title>review</title>
-      <link>https://newb.tokyo/tags/review/</link>
+      <link>https://umasoya.github.io/tags/review/</link>
       <pubDate>Thu, 14 Feb 2019 14:32:11 +0000</pubDate>
       
-      <guid>https://newb.tokyo/tags/review/</guid>
+      <guid>https://umasoya.github.io/tags/review/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Linux</title>
-      <link>https://newb.tokyo/tags/linux/</link>
+      <link>https://umasoya.github.io/tags/linux/</link>
       <pubDate>Thu, 13 Sep 2018 10:53:31 +0900</pubDate>
       
-      <guid>https://newb.tokyo/tags/linux/</guid>
+      <guid>https://umasoya.github.io/tags/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Windows</title>
-      <link>https://newb.tokyo/tags/windows/</link>
+      <link>https://umasoya.github.io/tags/windows/</link>
       <pubDate>Thu, 13 Sep 2018 10:53:31 +0900</pubDate>
       
-      <guid>https://newb.tokyo/tags/windows/</guid>
+      <guid>https://umasoya.github.io/tags/windows/</guid>
       <description></description>
     </item>
     
     <item>
       <title>WSL</title>
-      <link>https://newb.tokyo/tags/wsl/</link>
+      <link>https://umasoya.github.io/tags/wsl/</link>
       <pubDate>Thu, 13 Sep 2018 10:53:31 +0900</pubDate>
       
-      <guid>https://newb.tokyo/tags/wsl/</guid>
+      <guid>https://umasoya.github.io/tags/wsl/</guid>
       <description></description>
     </item>
     
     <item>
       <title>cafe</title>
-      <link>https://newb.tokyo/tags/cafe/</link>
+      <link>https://umasoya.github.io/tags/cafe/</link>
       <pubDate>Tue, 28 Aug 2018 01:37:21 +0900</pubDate>
       
-      <guid>https://newb.tokyo/tags/cafe/</guid>
+      <guid>https://umasoya.github.io/tags/cafe/</guid>
       <description></description>
     </item>
     
     <item>
       <title>life</title>
-      <link>https://newb.tokyo/tags/life/</link>
+      <link>https://umasoya.github.io/tags/life/</link>
       <pubDate>Tue, 28 Aug 2018 01:37:21 +0900</pubDate>
       
-      <guid>https://newb.tokyo/tags/life/</guid>
+      <guid>https://umasoya.github.io/tags/life/</guid>
       <description></description>
     </item>
     
     <item>
       <title>猫カフェ</title>
-      <link>https://newb.tokyo/tags/%E7%8C%AB%E3%82%AB%E3%83%95%E3%82%A7/</link>
+      <link>https://umasoya.github.io/tags/%E7%8C%AB%E3%82%AB%E3%83%95%E3%82%A7/</link>
       <pubDate>Tue, 28 Aug 2018 01:37:21 +0900</pubDate>
       
-      <guid>https://newb.tokyo/tags/%E7%8C%AB%E3%82%AB%E3%83%95%E3%82%A7/</guid>
+      <guid>https://umasoya.github.io/tags/%E7%8C%AB%E3%82%AB%E3%83%95%E3%82%A7/</guid>
       <description></description>
     </item>
     

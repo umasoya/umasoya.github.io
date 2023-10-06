@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "app.css",
-	"sourceRoot": "/newb.tokyo",
+	"sourceRoot": "/umasoya.github.io",
 	"sources": [
 		"assets/sass/app.scss",
 		"assets/sass/_hljs.scss",
