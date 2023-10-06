@@ -1,18 +1,15 @@
-ARG golang_version="1.19-alpine"
+ARG GO_VERSION="1.21.2"
+ARG DIST="alpine"
+ARG HUGO_VERSION="v0.119.0"
+ARG APP_NAME="umasoya.giithub.io"
 
-FROM golang:${golang_version}
+FROM golang:${GO_VERSION}-${DIST}
 
-ARG hugo_version="v0.104.3"
-
-RUN apk --update --no-cache add --virtual .deps git gcc tzdata && \
+RUN apk --update --no-cache add --virtual .deps gcc tzdata && \
     apk --no-cache add libc-dev g++ && \
-    cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
-    git clone -b ${hugo_version} --depth 1 https://github.com/gohugoio/hugo.git /tmp/hugo
-
-WORKDIR /tmp/hugo
+    cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime
 
 ENV CGO_ENABLED=1
 
-RUN go install --tags extended && \
-    rm -rf /tmp/hugo && \
+RUN go install --tags extended github.com/gohugoio/hugo@latest && \
     apk del --purge .deps

@@ -2,30 +2,31 @@ version: '3.7'
 
 services:
 
-    node:
-        image: node:lts-alpine
-        volumes:
-            - .:/newb.tokyo:rw
-            - node_modules:/newb.tokyo/node_modules:rw
-        working_dir: /newb.tokyo
-        ports:
-          - 9000:9000
-        command: npm run serve
+    #node:
+    #    image: node:lts-alpine
+    #    volumes:
+    #        - .:/newb.tokyo:rw
+    #        - node_modules:/newb.tokyo/node_modules:rw
+    #    working_dir: /newb.tokyo
+    #    ports:
+    #      - 9000:9000
+    #    command: npm run serve
 
     hugo:
-        build: ./docker/hugo
-          # image: umasoya/hugo
+        build:
+            context: ./docker/hugo
+            dockerfile: Dockerfile
         volumes:
-            - .:/newb.tokyo:rw
-        working_dir: /newb.tokyo
+            - .:/umasoya.github.io:rw
+        working_dir: /umasoya.github.io
         ports:
             - 1313:1313
             - 443:443
-        command: hugo server
+        command: hugo server --bind '0.0.0.0'
         logging:
             options:
                 max-size: '100k'
                 max-file: '3'
 
-volumes:
-    node_modules:
+#volumes:
+#    node_modules:
