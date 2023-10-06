@@ -1,14 +1,15 @@
-const path = require('path');
+/* eslint-disable prettier/prettier */
+const path                 = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const CssMinimizerPlugin   = require('css-minimizer-webpack-plugin');
 
 module.exports = {
-    devtool: "source-map",
+    devtool: 'source-map',
     mode: 'development',
     watch: false,
     entry: [
-        path.resolve(__dirname, "assets/js/app.ts"),
-        path.resolve(__dirname, "assets/sass/app.scss"),
+        path.resolve(__dirname, 'assets/js/app.ts'),
+        path.resolve(__dirname, 'assets/sass/app.scss'),
     ],
     devServer: {
         static: path.resolve(__dirname, 'docs'),
@@ -23,7 +24,7 @@ module.exports = {
         extensions: ['.ts', '.js'],
     },
     output: {
-        path: path.resolve(__dirname, "docs"),
+        path: path.resolve(__dirname, 'docs'),
         filename: 'js/app.js'
     },
     module: {

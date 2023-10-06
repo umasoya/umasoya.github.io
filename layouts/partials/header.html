@@ -25,9 +25,9 @@
   <!-- Styles -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
   <link href="/css/style.css" rel="stylesheet" type="text/css">
-  {{ $options := (dict "targetPath" "css/app.css" "outputStyle" "expanded" "enableSourceMap" true) }}
-  {{ $style := resources.Get "sass/app.scss" | resources.ToCSS $options | resources.Minify }}
-  <link href="{{ $style.Permalink }}" rel="stylesheet">
+  <!-- Custom Style -->
+  <link href="/css/app.min.css" rel="stylesheet">
+
   <!-- Favicons -->
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
   <link rel="icon" href="/img/favicon.ico">
