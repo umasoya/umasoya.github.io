@@ -26,3 +26,9 @@
         }
     }
 }
+.first-entry {
+    box-shadow: 0px 0px 6px 0px $box-shadow;
+    margin-top: $first-post-xmargin;
+    margin-right: $first-post-xmargin;
+    margin-left: $first-post-xmargin;
+}
