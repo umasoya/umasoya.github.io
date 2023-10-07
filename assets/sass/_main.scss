@@ -31,11 +31,19 @@ code[class*=language-], pre[class*=language-] {
 
 article.first-entry {
     min-height: calc(#{$header-height} + 80px + 80px); // overwrite
-    .post-header, .post-summary, .post-footer, .post-link {
+    .post-header, .post-summary, .post-footer, .post-link, .list-tags {
         @each $size, $value in $sizes {
             @include bp($size) {
                 min-width: #{$value};
             }
         }
     }
+}
+
+// 一覧のタグをカスタマイズ
+.list-tags > span {
+    background-color: $light-gray;
+    border-radius: 4px;
+    padding: 0 5px;
+    margin-right: 4px;
 }

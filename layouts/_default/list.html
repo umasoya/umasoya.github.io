@@ -22,29 +22,34 @@
     {{ end }}
 
     {{/* Concatenate tags to string */}}
-    {{ if eq .Params.tags nil}}
-      {{ .Scratch.Set "postTags" "" }}
-    {{ else }}
-      {{ $lowerTags := slice }}
-      {{range $tag := .Params.tags}}
-        {{/* replace "." to "_" */}}
-        {{ $lowerTags = $lowerTags | append (replace (lower $tag) "." "_") }}
-      {{ end }}
-      {{ .Scratch.Set "postTags" (delimit $lowerTags " ") }}
-    {{ end }}
 
     <article class="post {{ .Scratch.Get `postClass` }}" data-tags="{{ .Scratch.Get `postTags` }}">
       <header class="post-header">
         <h2 class="post-title">{{ .Title }}</h2>
       </header>
       <p class="post-summary">{{ .Summary | plainify | htmlUnescape }}...</p>
+
+      <!-- tag -->
+      {{ if ne .Params.tags nil }}
+        <p class="list-tags">
+        {{ $lowerTags := slice }}
+        {{range $tag := .Params.tags}}
+          {{ $lowerTag := replace ($tag | lower) "." "_" }}
+          <span>{{$tag}}</span>
+        {{ end }}
+        </p>
+      {{ end }}
+
       <footer class="post-footer">
         <p class="post-meta">{{ .Date.Format "2006.1.2" }}</p>
       </footer>
       <a class="post-link" href="{{ .Permalink }}"></a>
     </article>
+    {{/* タグリストをクリア */}}
+    {{$.Scratch.Delete "postTags"}}
   {{ end }}
 {{ end }}
+
 
 {{ if gt $paginator.TotalPages 1 }}
   <footer class="list-footer">
