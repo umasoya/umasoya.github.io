@@ -22,13 +22,16 @@
   <meta name="description" content="{{ .Site.Params.description }}">
   <meta name="author" content="{{ .Site.Params.author }}">
   {{ end -}}
-  <!-- Styles -->
+  <!-- Hugo Paper Styles -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+3:400,400i,700,700i" rel="stylesheet">
   <link href="/css/style.css" rel="stylesheet" type="text/css">
   <!-- Custom Style -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.min.css" integrity="sha256-ko4j5rn874LF8dHwW29/xabhh8YBleWfvxb8nQce4Fc=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.min.css" integrity="sha256-zzHVEO0xOoVm0I6bT9v5SgpRs1cYNyvEvHXW/1yCgqU=" crossorigin="anonymous">
+  <!--
   <link href="/css/app.min.css" rel="stylesheet">
+  -->
+  <link href="/css/app.min.css?{{ now.Format "20060102150405" }}" rel="stylesheet">
 
   <!-- Favicons -->
   <link rel="apple-touch-icon" href="/img/apple-touch-icon.png">

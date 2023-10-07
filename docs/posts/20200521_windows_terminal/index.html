@@ -11,11 +11,13 @@
   <meta name="description" content="Microsoft Store からインストール 設定は以下のファイルに書いていく。 %LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\setting.json デフォルトの起動を Windows Power Shell から WSL(Ubuntu) に変更 defaultProfile にプロファイルのguid を指定するとそれがデフ">
   <meta name="author" content="umasoya">
   
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+3:400,400i,700,700i" rel="stylesheet">
   <link href="../../css/style.css" rel="stylesheet" type="text/css">
   
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.min.css" integrity="sha256-ko4j5rn874LF8dHwW29/xabhh8YBleWfvxb8nQce4Fc=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.min.css" integrity="sha256-zzHVEO0xOoVm0I6bT9v5SgpRs1cYNyvEvHXW/1yCgqU=" crossorigin="anonymous">
   
-  <link href="https://umasoya.github.io/css/app.min.css" rel="stylesheet">
+  <link href="../../css/app.min.css?20231007115801" rel="stylesheet">
 
   
   <link rel="apple-touch-icon" href="../../img/apple-touch-icon.png">
@@ -56,24 +58,24 @@
 <h2 id="デフォルトの起動を-windows-power-shell-から-wslubuntu-に変更">デフォルトの起動を Windows Power Shell から WSL(Ubuntu) に変更</h2>
 <p><code>defaultProfile</code> にプロファイルのguid を指定するとそれがデフォルトで起動するようになる。</p>
 <p>guid は <code>list</code>の中にかかれているのでそれをコピペ</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// WSLのguid
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    <span style="color:#f92672">&#34;defaultProfile&#34;</span>: <span style="color:#e6db74">&#34;{2c4de342-38b7-51cf-b940-2309a097f518}&#34;</span>
-</span></span><span style="display:flex;"><span>}
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// WSLのguid
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nt">&#34;defaultProfile&#34;</span><span class="p">:</span> <span class="s2">&#34;{2c4de342-38b7-51cf-b940-2309a097f518}&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><h2 id="起動時のディレクトリをwslのホームディレクトリに変更">起動時のディレクトリをWSLのホームディレクトリに変更</h2>
 <p>そのままだと  <code>%USERPROFILE%</code> が開くので起動時のコマンドで <code>~</code> を指定する。</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;profiles&#34;</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;list&#34;</span>: [
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;guid&#34;</span>: <span style="color:#e6db74">&#34;{2c4de342-38b7-51cf-b940-2309a097f518}&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;hidden&#34;</span>: <span style="color:#66d9ef">false</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;Ubuntu&#34;</span>,
-</span></span><span style="display:flex;"><span>                <span style="color:#f92672">&#34;source&#34;</span>: <span style="color:#e6db74">&#34;Windows.Terminal.Wsl&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;commandline&#34;</span>: <span style="color:#e6db74">&#34;wsl.exe ~ -d Ubuntu&#34;</span>
-</span></span><span style="display:flex;"><span>      }
-</span></span><span style="display:flex;"><span>    ]
-</span></span><span style="display:flex;"><span>}
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;profiles&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;list&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;guid&#34;</span><span class="p">:</span> <span class="s2">&#34;{2c4de342-38b7-51cf-b940-2309a097f518}&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;hidden&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;Ubuntu&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&#34;source&#34;</span><span class="p">:</span> <span class="s2">&#34;Windows.Terminal.Wsl&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;commandline&#34;</span><span class="p">:</span> <span class="s2">&#34;wsl.exe ~ -d Ubuntu&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><h2 id="見た目をカスタマイズ">見た目をカスタマイズ</h2>
 <p>プロファイルに以下のプロパティを追記する。</p>
 <p>全プロファイルで共通の設定は <code>defaults</code> に記述する。</p>
@@ -107,51 +109,51 @@
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;profiles&#34;</span>:
-</span></span><span style="display:flex;"><span>      <span style="color:#e6db74">&#34;defaults&#34;</span>:
-</span></span><span style="display:flex;"><span>      {
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;colorSchema&#34;</span>: <span style="color:#e6db74">&#34;Solarized Dark&#34;</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;useAcrylic&#34;</span>: <span style="color:#66d9ef">false</span>,
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">&#34;fontFace&#34;</span>: <span style="color:#e6db74">&#34;Migu 1M&#34;</span>
-</span></span><span style="display:flex;"><span>    },
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">&#34;list&#34;</span>: [
-</span></span><span style="display:flex;"><span>        {
-</span></span><span style="display:flex;"><span>          <span style="color:#960050;background-color:#1e0010">...,</span>
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;backgroundImage&#34;</span>: <span style="color:#e6db74">&#34;path\\to\\image&#34;</span>,
-</span></span><span style="display:flex;"><span>          <span style="color:#f92672">&#34;backgroundOpacity&#34;</span>: <span style="color:#ae81ff">0.5</span>,
-</span></span><span style="display:flex;"><span>          <span style="color:#960050;background-color:#1e0010">...</span>
-</span></span><span style="display:flex;"><span>      }
-</span></span><span style="display:flex;"><span>    ]
-</span></span><span style="display:flex;"><span>}
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;profiles&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;defaults&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;colorSchema&#34;</span><span class="p">:</span> <span class="s2">&#34;Solarized Dark&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;useAcrylic&#34;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&#34;fontFace&#34;</span><span class="p">:</span> <span class="s2">&#34;Migu 1M&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">},</span>
+</span></span><span class="line"><span class="cl">      <span class="nt">&#34;list&#34;</span><span class="p">:</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="err">...,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;backgroundImage&#34;</span><span class="p">:</span> <span class="s2">&#34;path\\to\\image&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="nt">&#34;backgroundOpacity&#34;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">          <span class="err">...</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>フォントは長年windows環境で愛用している <a href="https://mix-mplus-ipa.osdn.jp/migu/">Migu 1M</a> を使用。</p>
 <h2 id="キーバインド">キーバインド</h2>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">&#34;keybindings&#34;</span>:
-</span></span><span style="display:flex;"><span>    [
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// split pane
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        { <span style="color:#f92672">&#34;command&#34;</span>: { <span style="color:#f92672">&#34;action&#34;</span>: <span style="color:#e6db74">&#34;splitPane&#34;</span>, <span style="color:#f92672">&#34;split&#34;</span>: <span style="color:#e6db74">&#34;vertical&#34;</span> }, <span style="color:#f92672">&#34;keys&#34;</span>: <span style="color:#e6db74">&#34;alt+|&#34;</span> },
-</span></span><span style="display:flex;"><span>        { <span style="color:#f92672">&#34;command&#34;</span>: { <span style="color:#f92672">&#34;sction&#34;</span>: <span style="color:#e6db74">&#34;splitPane&#34;</span>, <span style="color:#f92672">&#34;split&#34;</span>: <span style="color:#e6db74">&#34;horizontal&#34;</span> }, <span style="color:#f92672">&#34;keys&#34;</span>: <span style="color:#e6db74">&#34;alt+-&#34;</span> },
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// move pane
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>    { <span style="color:#f92672">&#34;command&#34;</span>: { <span style="color:#f92672">&#34;action&#34;</span>: <span style="color:#e6db74">&#34;moveFocus&#34;</span>, <span style="color:#f92672">&#34;direction&#34;</span>: <span style="color:#e6db74">&#34;left&#34;</span> }, <span style="color:#f92672">&#34;keys&#34;</span>: <span style="color:#e6db74">&#34;alt+h&#34;</span> },
-</span></span><span style="display:flex;"><span>        { <span style="color:#f92672">&#34;command&#34;</span>: { <span style="color:#f92672">&#34;action&#34;</span>: <span style="color:#e6db74">&#34;moveFocus&#34;</span>, <span style="color:#f92672">&#34;direction&#34;</span>: <span style="color:#e6db74">&#34;down&#34;</span> }, <span style="color:#f92672">&#34;keys&#34;</span>: <span style="color:#e6db74">&#34;alt+j&#34;</span> },
-</span></span><span style="display:flex;"><span>        { <span style="color:#f92672">&#34;command&#34;</span>: { <span style="color:#f92672">&#34;action&#34;</span>: <span style="color:#e6db74">&#34;moveFocus&#34;</span>, <span style="color:#f92672">&#34;direction&#34;</span>: <span style="color:#e6db74">&#34;up&#34;</span> }, <span style="color:#f92672">&#34;keys&#34;</span>: <span style="color:#e6db74">&#34;alt+k&#34;</span> },
-</span></span><span style="display:flex;"><span>        { <span style="color:#f92672">&#34;command&#34;</span>: { <span style="color:#f92672">&#34;action&#34;</span>: <span style="color:#e6db74">&#34;moveFocus&#34;</span>, <span style="color:#f92672">&#34;direction&#34;</span>: <span style="color:#e6db74">&#34;right&#34;</span> }, <span style="color:#f92672">&#34;keys&#34;</span>: <span style="color:#e6db74">&#34;alt+l&#34;</span> },
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// resize pane
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        { <span style="color:#f92672">&#34;command&#34;</span>: { <span style="color:#f92672">&#34;action&#34;</span>: <span style="color:#e6db74">&#34;resizePane&#34;</span>, <span style="color:#f92672">&#34;direction&#34;</span>: <span style="color:#e6db74">&#34;left&#34;</span> }, <span style="color:#f92672">&#34;keys&#34;</span>: <span style="color:#e6db74">&#34;alt+left&#34;</span> },
-</span></span><span style="display:flex;"><span>        { <span style="color:#f92672">&#34;command&#34;</span>: { <span style="color:#f92672">&#34;action&#34;</span>: <span style="color:#e6db74">&#34;resizePane&#34;</span>, <span style="color:#f92672">&#34;direction&#34;</span>: <span style="color:#e6db74">&#34;down&#34;</span> }, <span style="color:#f92672">&#34;keys&#34;</span>: <span style="color:#e6db74">&#34;alt+down&#34;</span> },
-</span></span><span style="display:flex;"><span>        { <span style="color:#f92672">&#34;command&#34;</span>: { <span style="color:#f92672">&#34;action&#34;</span>: <span style="color:#e6db74">&#34;resizePane&#34;</span>, <span style="color:#f92672">&#34;direction&#34;</span>: <span style="color:#e6db74">&#34;up&#34;</span> }, <span style="color:#f92672">&#34;keys&#34;</span>: <span style="color:#e6db74">&#34;alt+up&#34;</span> },
-</span></span><span style="display:flex;"><span>        { <span style="color:#f92672">&#34;command&#34;</span>: { <span style="color:#f92672">&#34;action&#34;</span>: <span style="color:#e6db74">&#34;resizePane&#34;</span>, <span style="color:#f92672">&#34;direction&#34;</span>: <span style="color:#e6db74">&#34;right&#34;</span> }, <span style="color:#f92672">&#34;keys&#34;</span>: <span style="color:#e6db74">&#34;alt+right&#34;</span> },
-</span></span><span style="display:flex;"><span>        
-</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// find
-</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span>        { <span style="color:#f92672">&#34;command&#34;</span>: <span style="color:#e6db74">&#34;find&#34;</span>, <span style="color:#f92672">&#34;keys&#34;</span>: <span style="color:#e6db74">&#34;alt+f },
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        // close pane
-</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">        { &#34;</span><span style="color:#960050;background-color:#1e0010">command</span><span style="color:#e6db74">&#34;: &#34;</span><span style="color:#960050;background-color:#1e0010">closePane</span><span style="color:#e6db74">&#34;, &#34;</span><span style="color:#960050;background-color:#1e0010">keys</span><span style="color:#e6db74">&#34;: &#34;</span><span style="color:#960050;background-color:#1e0010">alt+q&#34;</span> }
-</span></span><span style="display:flex;"><span>    ]
-</span></span><span style="display:flex;"><span>}
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-json" data-lang="json"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&#34;keybindings&#34;</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// split pane
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">{</span> <span class="nt">&#34;command&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;action&#34;</span><span class="p">:</span> <span class="s2">&#34;splitPane&#34;</span><span class="p">,</span> <span class="nt">&#34;split&#34;</span><span class="p">:</span> <span class="s2">&#34;vertical&#34;</span> <span class="p">},</span> <span class="nt">&#34;keys&#34;</span><span class="p">:</span> <span class="s2">&#34;alt+|&#34;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span> <span class="nt">&#34;command&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;sction&#34;</span><span class="p">:</span> <span class="s2">&#34;splitPane&#34;</span><span class="p">,</span> <span class="nt">&#34;split&#34;</span><span class="p">:</span> <span class="s2">&#34;horizontal&#34;</span> <span class="p">},</span> <span class="nt">&#34;keys&#34;</span><span class="p">:</span> <span class="s2">&#34;alt+-&#34;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">// move pane
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="p">{</span> <span class="nt">&#34;command&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;action&#34;</span><span class="p">:</span> <span class="s2">&#34;moveFocus&#34;</span><span class="p">,</span> <span class="nt">&#34;direction&#34;</span><span class="p">:</span> <span class="s2">&#34;left&#34;</span> <span class="p">},</span> <span class="nt">&#34;keys&#34;</span><span class="p">:</span> <span class="s2">&#34;alt+h&#34;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span> <span class="nt">&#34;command&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;action&#34;</span><span class="p">:</span> <span class="s2">&#34;moveFocus&#34;</span><span class="p">,</span> <span class="nt">&#34;direction&#34;</span><span class="p">:</span> <span class="s2">&#34;down&#34;</span> <span class="p">},</span> <span class="nt">&#34;keys&#34;</span><span class="p">:</span> <span class="s2">&#34;alt+j&#34;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span> <span class="nt">&#34;command&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;action&#34;</span><span class="p">:</span> <span class="s2">&#34;moveFocus&#34;</span><span class="p">,</span> <span class="nt">&#34;direction&#34;</span><span class="p">:</span> <span class="s2">&#34;up&#34;</span> <span class="p">},</span> <span class="nt">&#34;keys&#34;</span><span class="p">:</span> <span class="s2">&#34;alt+k&#34;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span> <span class="nt">&#34;command&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;action&#34;</span><span class="p">:</span> <span class="s2">&#34;moveFocus&#34;</span><span class="p">,</span> <span class="nt">&#34;direction&#34;</span><span class="p">:</span> <span class="s2">&#34;right&#34;</span> <span class="p">},</span> <span class="nt">&#34;keys&#34;</span><span class="p">:</span> <span class="s2">&#34;alt+l&#34;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">// resize pane
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">{</span> <span class="nt">&#34;command&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;action&#34;</span><span class="p">:</span> <span class="s2">&#34;resizePane&#34;</span><span class="p">,</span> <span class="nt">&#34;direction&#34;</span><span class="p">:</span> <span class="s2">&#34;left&#34;</span> <span class="p">},</span> <span class="nt">&#34;keys&#34;</span><span class="p">:</span> <span class="s2">&#34;alt+left&#34;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span> <span class="nt">&#34;command&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;action&#34;</span><span class="p">:</span> <span class="s2">&#34;resizePane&#34;</span><span class="p">,</span> <span class="nt">&#34;direction&#34;</span><span class="p">:</span> <span class="s2">&#34;down&#34;</span> <span class="p">},</span> <span class="nt">&#34;keys&#34;</span><span class="p">:</span> <span class="s2">&#34;alt+down&#34;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span> <span class="nt">&#34;command&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;action&#34;</span><span class="p">:</span> <span class="s2">&#34;resizePane&#34;</span><span class="p">,</span> <span class="nt">&#34;direction&#34;</span><span class="p">:</span> <span class="s2">&#34;up&#34;</span> <span class="p">},</span> <span class="nt">&#34;keys&#34;</span><span class="p">:</span> <span class="s2">&#34;alt+up&#34;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span> <span class="nt">&#34;command&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="nt">&#34;action&#34;</span><span class="p">:</span> <span class="s2">&#34;resizePane&#34;</span><span class="p">,</span> <span class="nt">&#34;direction&#34;</span><span class="p">:</span> <span class="s2">&#34;right&#34;</span> <span class="p">},</span> <span class="nt">&#34;keys&#34;</span><span class="p">:</span> <span class="s2">&#34;alt+right&#34;</span> <span class="p">},</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">        <span class="c1">// find
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="p">{</span> <span class="nt">&#34;command&#34;</span><span class="p">:</span> <span class="s2">&#34;find&#34;</span><span class="p">,</span> <span class="nt">&#34;keys&#34;</span><span class="p">:</span> <span class="s2">&#34;alt+f },
+</span></span></span><span class="line"><span class="cl"><span class="s2">        
+</span></span></span><span class="line"><span class="cl"><span class="s2">        // close pane
+</span></span></span><span class="line"><span class="cl"><span class="s2">        { &#34;</span><span class="err">command</span><span class="s2">&#34;: &#34;</span><span class="err">closePane</span><span class="s2">&#34;, &#34;</span><span class="err">keys</span><span class="s2">&#34;: &#34;</span><span class="err">alt+q&#34;</span> <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><h1 id="感想">感想</h1>
 <p>これ1つでWSL、cmd、Windows Power Shell 等を使えるのはかなり便利。</p>
 <p>今まで <code>tmux</code> を使って画面分割していたけどもう不要かもしれない。</p>
@@ -185,8 +187,8 @@
 <footer class="footer">
   <span>&copy; 2023 umasoya</span>
 </footer>
-
-<script src="https://umasoya.github.io/js/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+<script src="../../js/app.js?20231007115801"></script>
 </body>
 </html>
 

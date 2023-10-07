@@ -11,11 +11,13 @@
   <meta name="description" content="SET GLOBAL 変数名=値 or SET @@global.変数名=値 これだけだと再起動したときに設定が消えてしまうので、必ず my.cnf も変更しておく。">
   <meta name="author" content="umasoya">
   
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+3:400,400i,700,700i" rel="stylesheet">
   <link href="../../css/style.css" rel="stylesheet" type="text/css">
   
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs/themes/prism.min.css" integrity="sha256-ko4j5rn874LF8dHwW29/xabhh8YBleWfvxb8nQce4Fc=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-okaidia.min.css" integrity="sha256-zzHVEO0xOoVm0I6bT9v5SgpRs1cYNyvEvHXW/1yCgqU=" crossorigin="anonymous">
   
-  <link href="https://umasoya.github.io/css/app.min.css" rel="stylesheet">
+  <link href="../../css/app.min.css?20231007115801" rel="stylesheet">
 
   
   <link rel="apple-touch-icon" href="../../img/apple-touch-icon.png">
@@ -60,12 +62,12 @@
     </ul>
     
   </header>
-  <div class="post-content"><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> <span style="color:#66d9ef">GLOBAL</span> <span style="color:#960050;background-color:#1e0010">変数名</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">値</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">or</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SET</span> <span style="color:#f92672">@@</span><span style="color:#66d9ef">global</span>.<span style="color:#960050;background-color:#1e0010">変数名</span><span style="color:#f92672">=</span><span style="color:#960050;background-color:#1e0010">値</span>
-</span></span></code></pre></div><p>これだけだと再起動したときに設定が消えてしまうので、必ず <code>my.cnf</code> も変更しておく。</p>
+  <div class="post-content"><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SET</span><span class="w"> </span><span class="k">GLOBAL</span><span class="w"> </span><span class="err">変数名</span><span class="o">=</span><span class="err">値</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">or</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SET</span><span class="w"> </span><span class="o">@@</span><span class="k">global</span><span class="p">.</span><span class="err">変数名</span><span class="o">=</span><span class="err">値</span><span class="w">
+</span></span></span></code></pre></div><p>これだけだと再起動したときに設定が消えてしまうので、必ず <code>my.cnf</code> も変更しておく。</p>
 </div>
 
   
@@ -87,8 +89,8 @@
 <footer class="footer">
   <span>&copy; 2023 umasoya</span>
 </footer>
-
-<script src="https://umasoya.github.io/js/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+<script src="../../js/app.js?20231007115801"></script>
 </body>
 </html>
 
