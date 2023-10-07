@@ -20,6 +20,7 @@
     "path": "^0.12.7",
     "prettier": "^2.7.1",
     "pretty-quick": "^3.1.3",
+    "prismjs": "^1.29.0",
     "sass": "^1.55.0",
     "sass-loader": "^13.0.2",
     "scroll-out": "^2.2.8",
@@ -37,9 +38,9 @@
     "glob-parent": "^5.1.2"
   },
   "scripts": {
-    "init": "docker compose run --rm node yarn install",
-    "build": "docker compose run --rm node yarn run webpack --mode development",
-    "serve": "docker compose run --rm node yarn run webpack serve --mode development"
+    "init": "yarn install",
+    "build": "yarn run webpack --mode development",
+    "serve": "yarn run webpack serve --mode development"
   },
   "dependencies": {
     "@types/express-serve-static-core": "<=4.17.31",

@@ -28,3 +28,8 @@ path = "/"
 [[params.menu]]
 name = "about"
 path = "/about/"
+
+[markup]
+    [markup.highlight]
+        noClasses = false
+        noHl = false

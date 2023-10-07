@@ -13,6 +13,10 @@
     .post-tags {
         margin: 10px 0 0 !important;
     }
+    code:not([data-lang]) {
+        background: $inline-code-bg;
+        color: $inline-code-fg;
+    }
 }
 .post-entry {
     box-shadow: 0px 0px 6px 0px $box-shadow;
@@ -20,11 +24,5 @@
         @include bp($size) {
             min-width: #{$value};
         }
-    }
-}
-
-code {
-    &:not(.inline-code) {
-        box-shadow: 0px 0px 10px 5px $box-shadow;
     }
 }

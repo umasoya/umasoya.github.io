@@ -5,7 +5,7 @@
 use `hugo new` command.
 
 ```
-.bin/hugo new posts/hello.md
+.bin/hugo new posts/hello/index.md
 
 or
 
@@ -15,7 +15,7 @@ or
 ## build content
 
 ```sh
-docker-compose run --rm hugo hugo
+docker compose run --rm hugo hugo
 
 # or
 
@@ -24,16 +24,12 @@ docker-compose run --rm hugo hugo
 
 ## build assets
 
+- ts
+- scss
+
+ともに `webpack` でバンドルしている｡
+hugoの機能でコンパイルできるが､管理コストが高く小回りも効かないのでこうなった｡
+
 ```sh
-docker-compose run --rm node npm run build
-```
-
-## run server
-
-```sh
-npm run serve
-
-# or
-
-.bin/server
+docker compose run --rm node yarn run build
 ```
