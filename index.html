@@ -28,18 +28,22 @@
         .custom-border-right {
             border-right: solid var(--pico-primary-border) var(--pico-border-width);
         }
-        .custom-accounts {
+        .custom-account {
+            margin-top: var(--pico-nav-element-spacing-vertical);
+
+            & i {
+                margin-right: .5rem;
+            }
+        }
+        .custom-accounts-list {
             font-size: 90%;
+            padding: 0 calc(var(--pico-nav-element-spacing-horizontal)* .5);
         }
         .custom-accounts-anchor {
             display: flex;
             align-items: center;
             text-decoration: none;
             color: inherit;
-
-            &>i {
-                margin-right: .5rem;
-            }
         }
     </style>
 </head>
@@ -57,15 +61,37 @@
         <div class="custom-grid-layout">
             <aside class="custom-border-right">
                 <div>
-                    <img src="./circle_icon.png" alt="icon">
+                    <img src="/circle_icon.png" alt="icon">
                 </div>
                 <div class="center">Yasuto Soma</div>
 
-                <ul>
-                    <li class="custom-accounts">
+                <ul class="custom-account">
+                    <li class="custom-accounts-list">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Japan</span>
+                    </li>
+                    <li class="custom-accounts-list">
                         <a href="https://github.com/umasoya/" class="custom-accounts-anchor">
                             <i class="fa-brands fa-github"></i>
                             <span>Github</span>
+                        </a>
+                    </li>
+                    <li class="custom-accounts-list">
+                        <a href="mailto:umasoya.0331@gmail.com" class="custom-accounts-anchor">
+                            <i class="fa-solid fa-envelope"></i>
+                            <span>Email</span>
+                        </a>
+                    </li>
+                    <li class="custom-accounts-list">
+                        <a href="https://x.com/umasoya" class="custom-accounts-anchor">
+                            <i class="fa-brands fa-x-twitter"></i>
+                            <span>X</span>
+                        </a>
+                    </li>
+                    <li class="custom-accounts-list">
+                        <a href="https://youtrust.jp/users/umasoya" class="custom-accounts-anchor">
+                            <i class="fa-solid fa-link"></i>
+                            <span>YOUTRUST</span>
                         </a>
                     </li>
                 </ul>
