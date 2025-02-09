@@ -1,1 +1,0 @@
-# https-umasoya.github.io
